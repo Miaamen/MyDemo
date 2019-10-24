@@ -1,0 +1,76 @@
+<!--
+今日demo学习 - CSS radial-gradient()函数
+
+“radial-gradient()函数创建一个<image>用来展示由原点（渐变中心）辐射开的颜色渐变”
+
+语法：radial-gradient(shape size at position ,start-color,...,last-color);
+(1)shape：确定圆的类型是椭圆还是圆形：ellipse为椭圆（默认）、circle为圆形；
+(2)size：确定渐变的大小，默认半径长度为圆心到离圆心最远的角；
+(3)position：确定渐变的位置；
+
+like：
+<<  radial-gradient(circle at right top,transparent 10px,#f66 0)  >>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mall-ticket</title>
+	<style type="text/css">
+		.mallTicket{
+			position: relative;
+			width: 300px;
+			height: 100px;
+			background: radial-gradient(circle at right top,transparent 10px,#f66 0) top left/100px 50% no-repeat,radial-gradient(circle at right bottom,transparent 10px,#f66 0) bottom left/100px 51% no-repeat,radial-gradient(circle at left top,transparent 10px,#ccc 0) top right/200px 50% no-repeat,radial-gradient(circle at left bottom,transparent 10px,#ccc 0) bottom right/200px 51% no-repeat;
+			filter: drop-shadow(2px 2px 2px rgba(#fff,0.2));
+			line-height: 100px;
+			text-align: center;
+			color: #fff;
+		}
+		.mallTicket::before{
+			position: absolute;
+			left: 100px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			border: 1px dashed #66f;
+			height: 80px;
+			content: '';
+		}
+		.mallTicket::after{
+			position: absolute;
+			left: 100%;
+			top: 0;
+			width: 5px;
+			height: 100%;
+			background-image: linear-gradient(180deg,#ccc 5px,transparent 5px,transparent),radial-gradient(10px circle at 5px 10px,transparent 5px,#ccc 5px);
+			background-size: 5px 15px;
+
+			content: '';
+		}
+		h3{
+			width: 100px;
+			font-size: 30px;
+			padding: 0;
+			margin: 0;
+		}
+		p{
+			display: inline;
+			position: absolute;
+			left: 137px;
+			top: 0px;
+			color: #fff;
+			margin: 0;
+			font-weight: bold;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="mallTicket">
+		<h3>100元</h3>
+		<p>网易考拉代金券</p>
+	</div>
+</body>
+</html>
