@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+	<style type="text/css">
+		*{
+			font-family: montserrat;
+			box-sizing: border-box;
+		}
+		body{
+			min-height: 100vh;
+			background-image: linear-gradient(#7a8bd2,#fff);
+		}
+		.login-form{
+			width: 360px;
+			height: 580px;
+			padding: 40px 40px;
+			background: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 10px;
+		}
+
+		.login-form h2{
+			color: #5e64b3;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		
+		.login-form .login2{
+			margin-bottom: 30px;
+		}
+		.text{
+			border-bottom: 1px solid #ccc;
+			position: relative;
+			margin: 30px auto;
+		}
+
+		.text input{
+			font-size: 15px;
+			color: #333;
+			border : none;
+			width: 100%;
+			background: none;
+			padding: 0 5px;
+			height: 40px;
+			outline: none;
+		}
+
+		.text span::before{
+			content: attr(placeholder);
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			color: #9f9f9f;
+			transform: translateY(-50%);
+			transition: 0.5s;
+		}
+
+		.focus + span::before{
+			top: -5px;
+		}
+
+		.text + .focus{
+			border-bottom: 1px solid red;
+		}
+
+		.loginBtn{
+			display: block;
+			width: 100%;
+			height: 50px;
+			border: none;
+			background: #7a8bd2;
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		.loginBtn:hover{
+			background: #5e64b3;
+		}
+
+		.signUp{
+			margin-top: 60px;
+			text-align: center;
+			font-size: 15px;
+		}
+
+		a{
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<form action="" class="login-form">
+		<h2>牙科预约管理系统</h2>
+		<h2 class="login2">Login</h2>
+		<div class="text">
+			<input type="text" class="in">
+			<span placeholder ="用户名"></span>
+		</div>
+		<div class="text">
+			<input type="password" class="in">
+			<span placeholder ="密码"></span>
+		</div>
+		<input type="submit" class="loginBtn" value="登陆">
+
+		<div class="signUp">
+			没有注册过账号？<a href="#">立即注册</a>
+		</div>
+	</form>
+	
+	<script type="text/javascript">
+		$(".text input").focus(function(){
+			$(this).addClass("focus");
+		});
+
+		$(".text input").blur(function(){
+			if($(".text input[type=text]").val()==""){
+				$(this).removeClass("focus");
+			}
+		});
+	</script>
+</body>
+</html>
