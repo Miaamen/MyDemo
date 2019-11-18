@@ -1,0 +1,267 @@
+		*{
+			font-family: montserrat;
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style: none;
+		}
+
+		body{
+			min-height: 100vh;
+		}
+
+		.header{
+			height: 10vh;
+			background: #7a8bd2;
+			padding: 0 20px;
+			color: #fff;
+			box-shadow: 0px 7px 7px -7px #7a8bd2;
+		}
+
+		.header h2{
+			line-height: 10vh;
+			float: left;
+		}
+
+		.nav{
+			width: 20%;
+			float: left;
+			height: 90vh;
+			background: #383e60;
+			overflow: hidden;
+			box-shadow: 7px 0px 7px -7px #383e60;
+		}
+
+		.item{
+			overflow: hidden;
+			border-top: 2px solid #848fcf;
+			padding: 0 0;
+			margin: 0;
+		}
+
+		.item .select{
+			display: block;
+			padding: 13px 20px;
+			color: #fff;
+			background: #6977bc;
+			position: relative;
+		}
+
+		.select::before{
+			content: '';
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			background: #6977bc;
+			left:20px;
+			bottom: -7px;
+			transform: rotate(45deg);
+		}
+
+		.selcet-li{
+			display: none;
+			background: #383e60;
+			overflow: hidden;
+
+		}
+
+		.selcet-li a{
+			cursor: pointer;
+			display: block;
+			padding: 13px 20px;
+			color: #fff;
+			font-size: 14px;
+			position: relative;
+			border-bottom: 1px dashed #70719a;
+		}
+
+		.selcet-li a::before{
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 100%;
+			border-radius: 2px;
+			background: #7a8bd2;
+			left: 0;
+			top: 0;
+			transition: 0.5s;
+			opacity: 0;
+		}
+
+		.selcet-li a:hover::before{
+			opacity: 1;
+		}
+
+		.top_nav{
+			height: 5vh;
+			line-height: 30px;
+		}
+
+		.top_nav li{
+			display: none;
+			background-color: #b1bbe8;
+			border-radius: 5px 5px 0 0;
+			list-style: none;
+			padding: 0 5px;
+			margin: 5px 0 0 10px;
+			float: left;
+		}
+
+		.top_nav li a{
+			color: #fff;
+			text-decoration: none; 
+		}
+
+		.message{
+			width: 79%;
+			height: 85vh;
+			float: right;
+			border: 2px dashed #b1bbe8;
+			overflow: hidden;
+		}
+
+		#htm1,#htm2,#htm3,#htm4,#htm5,#htm6{
+			width: 100%;
+			height: 100%;
+		}
+
+		.tool{
+			margin: 10px auto;
+			padding: 20px;
+		}
+
+		.tool input{
+			font-size: 15px;		
+			width: 30%;
+			height: 30px;
+			outline: none;
+		}
+
+		.search{
+			padding: 0 5px;
+			color: #7a8bd2;
+		}
+
+		.selectBtn,.searchBtn,.addBtn{
+			display: inline-block;
+			width: 20%;
+			height: 30px;
+			border: none;
+			background: #7a8bd2;
+			font-size: 16px;
+			font-weight: 500;
+			color: #fff;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		.searchBtn{
+			width: 8%;
+			margin-left: 10px;
+		}
+
+		.addBtn{
+			display: block;
+			width: 25%;
+			margin-top: 30px;
+		}
+	
+		.selectBtn:hover{
+			background: #5e64b3;
+		}
+
+		#table,#doc-table{
+			border-collapse:collapse;
+			border-spacing:0;
+			margin: 20px auto;
+			width: 90%;
+			line-height: 2em;
+			text-align: center;		
+			padding: 0;
+		}
+
+		#table th,#doc-table th{
+			border: 1px solid #7a8bd2;
+            color: #7a8bd2;
+            height: 30px;
+		}
+	
+		.htm2-contianer{
+			width: 80%;
+			margin: auto;
+			padding: 50px 0;
+			font-size: 18px;
+			color: #7a8bd2;display: block;
+		}
+
+		.addSpan{
+			display: block;
+			width: 25%;
+			height: 2em;
+		}
+
+		.addSpan input{
+			outline: none;
+			border: none;
+			widows: 80%;
+			border: 1px dashed #7a8bd2;
+			line-height: 2em;
+
+		}
+
+		.appoint-form{
+			padding: 20px 20%;
+			color: #7a8bd2;
+		}
+
+		.text{
+			border-bottom: 1px solid;
+			position: relative;
+			margin: 30px auto;
+		}
+
+		.text input{
+			font-size: 15px;
+			color: #7a8bd2;
+			border : none;
+			width: 100%;
+			background: none;
+			padding: 0 5px;
+			height: 40px;
+			outline: none;
+		}
+
+		.appoTime,.appoDoc{
+			color: #7a8bd2;
+			cursor: pointer;
+			line-height: 2.5em;
+		}
+
+		.appoTime select,.appoDoc select{
+			width: 100%;
+			height: 2em;
+			color: #7a8bd2;			
+		}
+
+		.appointBtn{
+			display: block;
+			width: 100%;
+			height: 50px;
+			border: none;
+			background: #7a8bd2;
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			transition: 0.5s;
+			margin-top: 50px;
+		}
+
+		.appointBtn:hover{
+			background: #5e64b3;
+		}
