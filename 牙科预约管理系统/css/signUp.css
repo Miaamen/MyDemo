@@ -1,0 +1,113 @@
+		*{
+			font-family: montserrat;
+			box-sizing: border-box;
+		}
+		body{
+			min-height: 100vh;
+			background-image: linear-gradient(#7a8bd2,#fff);
+		}
+		.signUp-form{
+			width: 360px;
+			height: 580px;
+			padding: 40px 40px;
+			background: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 10px;
+		}
+
+		.signUp-form h2{
+			color: #5e64b3;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		
+		.signUp-form .login2{
+			margin-bottom: 30px;
+		}
+
+		.button-box{
+			width: 230px;
+			margin: 20px auto 40px auto;
+			position: relative;
+			box-shadow: 0 0 20px 9px #e0e6ff;
+			border-radius: 30px;
+		}
+
+		.btn{
+			padding: 10px 39px;
+			text-align: center;
+			cursor: pointer;
+			background: transparent;
+			border: 0;
+			outline: none;
+			position: relative;
+		}
+
+		#checkedBtn{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 115px;
+			height: 100%;
+			border-radius: 30px;
+			background-image: linear-gradient(to right,#7a8bd2,#cdd5f6,#7a8bd2);
+			transition: 0.5s;
+		}
+
+		.text{
+			border-bottom: 1px solid #ccc;
+			position: relative;
+			margin: 30px auto;
+		}
+
+		.text input{
+			font-size: 15px;
+			color: #333;
+			border : none;
+			width: 100%;
+			background: none;
+			padding: 0 5px;
+			height: 40px;
+			outline: none;
+		}
+
+		.text span::before{
+			content: attr(placeholder);
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			color: #9f9f9f;
+			transform: translateY(-50%);
+			transition: 0.5s;
+		}
+
+		.focus + span::before{
+			top: -5px;
+		}
+
+		.text + .focus{
+			border-bottom: 1px solid red;
+		}
+
+		.signUpBtn{
+			display: block;
+			width: 100%;
+			height: 50px;
+			border: none;
+			background: #7a8bd2;
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			transition: 0.5s;
+			margin-top: 20px;
+		}
+
+		.signUpBtn:hover{
+			background: #5e64b3;
+		}
