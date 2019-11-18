@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理员界面</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+</head>
+<body>
+	<div class="header">
+		<h2>牙科预约管理系统</h2>
+	</div>
+	<div class="content-box">
+		<div class="nav">
+			<li class="item">
+				<a href="#" class="select">用户管理</a>
+				<div class="selcet-li">
+					<a href="#htm1" class="select-li-a">查找用户</a>
+					<a href="#htm2" class="select-li-a">添加用户</a>
+					<a href="#htm1" class="select-li-a">删除用户</a>
+				</div>
+			</li>
+			<li class="item">
+				<a href="#" class="select">医生管理</a>
+				<div class="selcet-li">
+					<a href="#htm4" class="select-li-a">查看医生</a>
+					<a href="#htm5" class="select-li-a">添加医生</a>
+					<a href="#htm4" class="select-li-a">删除医生</a>
+				</div>
+			</li>
+		</div>
+	</div>
+	<div class="table-container">
+		<div class="top_nav">
+			<ul>
+				<li class="top-nav-li"><a href="#htm1">查看用户<i class="fa fa-times" aria-hidden="true"></i></a></li>
+				<li class="top-nav-li"><a href="#htm2">添加用户<i class="fa fa-times" aria-hidden="true"></i></a></li>
+				<li class="top-nav-li"><a href="#htm1">删除用户<i class="fa fa-times" aria-hidden="true"></i></a></li>
+				<li class="top-nav-li"><a href="#htm4">查看医生<i class="fa fa-times" aria-hidden="true"></i></a></li>
+				<li class="top-nav-li"><a href="#htm5">添加医生<i class="fa fa-times" aria-hidden="true"></i></a></li>
+				<li class="top-nav-li"><a href="#htm4">删除医生<i class="fa fa-times" aria-hidden="true"></i></a></li>
+			</ul>
+	</div>
+	<div class="message">
+		<div id="htm1">
+			<div class="tool">
+				<span class="search"><input type="text" name=""><button class="searchBtn"><i class="fa fa-search" aria-hidden="true"></i>搜索</button></span>	
+				<button class="selectBtn">按姓名查找</button>
+				<button class="selectBtn">按预约时间查找</button>
+			</div>
+			<table id="table">
+				<tr>
+					<th><input type="checkbox" name=""></th>
+					<th>序号	</th>
+					<th>姓名	</th>
+					<th>电话	</th>
+					<th>预约时间</th>
+					<th>预约医生</th>
+					<th>删除</th>
+				</tr>
+			</table>
+		</div>
+		<div id="htm2">
+			<form action="" class="appoint-form">
+				<div class="text">				
+					<span>用户姓名：</span><input type="text" class="in">
+				</div>
+				<div class="text">
+					<span>用户电话：</span><input type="text" class="in">
+				</div>
+				<div class="appoTime">预约时间
+					<select>
+					    <option value="volvo">周一上午</option>
+					  	<option value="volvo">周一下午</option>
+					  	<option value="volvo">周二上午</option>
+					  	<option value="volvo">周二下午</option>
+					  	<option value="volvo">周三上午</option>
+					  	<option value="volvo">周三下午</option>
+					  	<option value="volvo">周四上午</option>
+					  	<option value="volvo">周四下午</option>
+					 	<option value="volvo">周五上午</option>
+					  	<option value="volvo">周五下午</option>
+					  	<option value="volvo">周六上午</option>
+					  	<option value="volvo">周六下午</option>
+					  	<option value="volvo">周日上午</option>
+					  	<option value="volvo">周日下午</option>
+					</select>
+				</div>
+				<div class="appoDoc">预约医生
+					<select>
+					  <option value="volvo">梁少欣医生</option>
+					  <option value="saab">朱傲雪医生</option>
+					  <option value="opel">温凌媛医生</option>
+					  <option value="audi">何豪麟医生</option>
+					</select>
+				</div>
+				<input type="submit" class="appointBtn" value="添加用户">
+			</form>
+		</div>
+		<div id="htm4">
+			<div class="tool">
+				<span class="search"><input type="text" name=""><button class="searchBtn"><i class="fa fa-search" aria-hidden="true"></i>搜索</button></span>	
+				<button class="selectBtn">按姓名查找</button>
+				<button class="selectBtn">按预约时间查找</button>
+			</div>
+			<table id="doc-table">
+				<tr>
+					<th><input type="checkbox" name=""></th>
+					<th>序号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年龄</th>
+					<th>个人信息</th>
+					<th>删除</th>
+				</tr>
+			</table>
+		</div>
+		<div id="htm5">
+			<form action="" class="appoint-form">
+				<div class="text">				
+					<span>用户姓名：</span><input type="text" class="in">
+				</div>
+				
+				<div class="appoTime">医生性别：
+					<select>
+					    <option value="volvo">男</option>
+					  	<option value="volvo">女</option>
+					</select>
+				</div>
+				<div class="text">
+					<span>医生年龄：</span><input type="text" class="in">
+				</div>
+				<div class="text">
+					<span>个人信息：</span><input type="text" class="in">
+				</div>
+				<input type="submit" class="appointBtn" value="添加医生">
+			</form>
+		</div>
+	</div>		
+	
+	<script type="text/javascript" src="../js/admin.js"></script>
+</body>
+</html>
