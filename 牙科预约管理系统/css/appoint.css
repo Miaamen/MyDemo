@@ -1,0 +1,181 @@
+		*{
+			font-family: montserrat;
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			min-height: 100vh;
+			/*background-image: linear-gradient(#7a8bd2,#fff);*/
+			/*background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573877046868&di=d06c7026b5da14d57ec4a55b9f48d3f4&imgtype=0&src=http%3A%2F%2Fwx2.sinaimg.cn%2Flarge%2F8a533d85ly1fmjmw9h6s2j20rs0fmq49.jpg);*/
+		}
+
+		.header{
+			height: 70px;
+			background: #7a8bd2;
+			padding: 0 20px;
+			color: #fff;
+		}
+
+		.header h2{
+			line-height: 70px;
+			float: left;
+		}
+
+		.header .menu{
+			float: right;
+			line-height: 70px;
+			font-size: 1.1em;
+			font-weight: 600;
+			transition: 3s;
+		}
+
+		.header .menu a{
+			color: #fff;
+			text-decoration: none;
+			padding: 0 20px;
+		}
+
+		.header .menu a:hover{
+			color: #524e8c;
+			border-bottom: 2px solid #524e8c; 
+		}
+
+		#form-container img{
+			width: 100%;
+			opacity: 0.7;
+		}
+
+		.appoint-form{
+			opacity: .95;
+			width: 360px;
+			height: 500px;
+			padding: 40px 40px;
+			background: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 10px;
+		}
+
+		.text{
+			border-bottom: 1px solid #ccc;
+			position: relative;
+			margin: 30px auto;
+		}
+
+		.text input{
+			font-size: 15px;
+			color: #333;
+			border : none;
+			width: 100%;
+			background: none;
+			padding: 0 5px;
+			height: 40px;
+			outline: none;
+		}
+
+		.text span::before{
+			content: attr(placeholder);
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			color: #9f9f9f;
+			transform: translateY(-50%);
+			transition: 0.5s;
+		}
+
+		.focus + span::before{
+			top: -5px;
+		}
+
+		.text + .focus{
+			border-bottom: 1px solid red;
+		}
+		
+		.appoTime,.appoDoc{
+			color: #9f9f9f;
+			cursor: pointer;
+			line-height: 2.5em;
+		}
+
+		.appoTime select,.appoDoc select{
+			width: 100%;
+			height: 2em;
+			color: #a0a0a0;
+			
+		}
+
+		.appointBtn{
+			display: block;
+			width: 100%;
+			height: 50px;
+			border: none;
+			background: #7a8bd2;
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			transition: 0.5s;
+			margin-top: 50px;
+		}
+
+		.appointBtn:hover{
+			background: #5e64b3;
+		}
+
+		
+		#intro-title{
+			height: 100px;
+			line-height: 100px;
+			padding: 0 20px;
+			color: #7a8bd2;
+			text-align: center;
+			font-size: 2.2em;
+			font-weight: 600;
+		}
+		.box-container{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			background-image: linear-gradient(#fff,#7a8bd2);
+		}
+		.box-container .box{
+			padding: 0;
+			margin: 50px 60px;
+			position: relative;
+			width: 380px;
+			background: #fff;
+			border-radius: 10px;
+			padding: 60px;
+			box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+			text-align: center;
+			transition: 0.5s;
+			cursor: pointer;
+		}
+
+		.box-container .box:hover{
+			transform: scale(1.1,1.1);
+		}
+
+		.box-container .box img{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+		}
+
+		.box-container .box h1{
+			padding: 10px;
+			font-size: 30px;
+			font-weight: 400;
+		}
+
+		.box-container .box h5{
+			padding: 10px;
+			font-size: 18px;
+			font-weight: 400;
+		}
