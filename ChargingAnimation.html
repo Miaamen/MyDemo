@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>充电动画</title>
+		<style>
+			body{
+				width: 100%;
+				height: 100%;
+				display: flex;
+				background: #ccc;
+			}
+			
+			.container{
+				position: relative;
+				width: 150px;
+				margin: 100px auto;
+			}
+			
+			.bettery{
+				height: 220px;
+				box-sizing: border-box;
+				border-radius: 15px 15px 5px 5px;
+				background: #fff;
+				filter: drop-shadow(0 1px 3px rgba(0,0,0,0.22));
+			}
+				
+			.bettery::before{
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 10px;
+				left: 50%;
+				top: 0;
+				transform: translate(-50%,-10px);
+				background: #f8f7f7;
+			}
+			
+			.bettery::after{
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 90%;
+				background: linear-gradient(to bottom, #7abcff 0%, #00BCD4 44%, #2196F3 100%);
+				border-radius: 0 0 5px 5px;
+				animation: charging 3s linear infinite;
+				filter: hue-rotate(90deg);
+			}
+			
+			@keyframes charging{
+				50%{
+					box-shadow: 0 14px 28px rgba(0, 150, 136, 0.83), 0px 4px 10px rgba(9, 188, 215, 0.4);
+				}
+				95% {
+					top: 5%;
+					filter: hue-rotate(0deg);
+					border-radius: 0 0 5px 5px;
+					box-shadow: 0 14px 28px rgba(4, 188, 213, .2), 0 10px 10px rgba(9, 188, 215, 0.08);
+				}
+				100% {
+					top: 0%;
+					filter: hue-rotate(0deg);
+					border-radius: 15px 15px 5px 5px;
+					box-shadow: 0 14px 28px rgba(4, 188, 213, 0), 0 10px 10px rgba(9, 188, 215, 0.4);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="bettery"></div>
+		</div>
+	</body>
+</html>
