@@ -9,3 +9,5 @@
 4.20/01/01demo：带贴条的便利贴 --- CSS实现
 
 5.20/01/01demo: 记录生活idea的简单网页 --- https://codepen.io/miaamen/pen/povWKwN
+
+6.20/01/03demo：学习使用max-width和opacity实现字母的隐藏和可见 --- https://codepen.io/miaamen/pen/xxbPpwb
