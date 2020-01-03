@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字隐藏，放置鼠标则展示</title>
+	<style>
+		body{
+			background-color: #bbded6;
+			font-family: fantasy;
+		}
+
+		.box{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			color: #8ac6d1;
+			font-size: 60px;
+			font-weight: 900;
+			cursor: pointer;
+		}
+
+		.hidden{
+			max-width: 0;
+			opacity: 0;
+			transition: 0.8s ease-in;
+		}
+
+		.box:hover .hidden{   //////~max-width和opacity是关键
+			opacity: 1;
+			max-width: 1em;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span>M</span>
+		<span class="hidden">i</span>
+		<span class="hidden">a</span>
+		<span>A</span>
+		<span class="hidden">M</span>
+		<span class="hidden">e</span>
+		<span class="hidden">n</span>
+	</div>
+</body>
+</html>
