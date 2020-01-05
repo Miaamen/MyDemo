@@ -1,15 +1,27 @@
+var date = new Date();
+var curYear = date.getFullYear();
+var curMonth = date.getMonth();
+var curDay = date.getDate();
+
+var todayY = curYear;
+var todayM = curMonth;
+
+var mm = ['JAN ','FEB ','MAR ','APR ','MAY ','JUN ','JUL ','AUG ','SEPT ','OCT ','NOV ','DEC '];
+
+var firstDayOfMonth = new Date(curYear,curMonth,1);
+var lastDayOfMonth = new Date(curYear,curMonth + 1,0);
+var blank = firstDayOfMonth.getDay();
+
 window.onload = function(){
-	var date = new Date();
-	var curYear = date.getFullYear();
-	var curMonth = date.getMonth();
-	var curDay = date.getDate();
 	console.log(date + "," + curYear + "," + curMonth + "," + curDay); 
+	//console.log(firstDayOfMonth + "v" + lastDayOfMonth + "v" + blank);
 	
-	var firstDayOfMonth = new Date(curYear,curMonth,1);
-	var lastDayOfMonth = new Date(curYear,curMonth + 1,0);
-	var blank = firstDayOfMonth.getDay();
-	console.log(firstDayOfMonth + "v" + lastDayOfMonth + "v" + blank);
-	showDate(curYear,curMonth,blank);
+	
+	
+	var m = document.getElementById("months");
+	var y = document.getElementById("years");
+	
+	showDate(curYear,curMonth);
 	var prevMonth = document.getElementById("prev");
 	var nextMonth = document.getElementById("next");
 	
@@ -18,25 +30,48 @@ window.onload = function(){
 	
 	function prevShow(){
 		var div = document.getElementById("calendar-content");
-		//var removeEle = document.getElementsByClassName("weekdays");
 		while(div.hasChildNodes()){
 			div.removeChild(div.lastChild);
 		}
-		//showDate(curYear,curMonth,0);
+		//如果当前月份是1月份的话，上一个月就是去年的最后一个月
+		if(curMonth === 0){
+			let tempY = Number(y.innerHTML);
+			y.innerHTML = tempY - 1;
+			m.innerHTML = 'DEC ';
+			showDate(curYear - 1,11);
+		}else{
+			m.innerHTML = mm[curMonth - 1];
+			showDate(curYear,curMonth - 1);
+		}
 	}
 	
 	function nextShow(){
-		/*var div = document.getElementById("calendar-content");
-		//var removeEle = document.getElementsByClassName("weekdays");
+		var div = document.getElementById("calendar-content");
 		while(div.hasChildNodes()){
 			div.removeChild(div.lastChild);
 		}
-		//div.removeChild();
-		showDate(curYear,curMonth,6);*/
+		//如果当前月份是12月份的话，下一个月就是明年的第一个月
+		if(curMonth === 11){
+			let tempY = Number(y.innerHTML);
+			y.innerHTML = tempY + 1;
+			m.innerHTML = 'JAN ';
+			showDate(curYear + 1,0);		
+		}else{
+			m.innerHTML = mm[curMonth + 1];
+			showDate(curYear,curMonth + 1);
+		}
 	}
+	
 }
 
-var showDate = function(year,month,blank){
+var showDate = function(year,month){
+	curYear = year;
+	curMonth = month;
+	
+	var firstDayOfMonth = new Date(curYear,curMonth,1);
+	var lastDayOfMonth = new Date(curYear,curMonth + 1,0);
+	var blank = firstDayOfMonth.getDay();
+	
 	var i = 0;
 	var div = document.getElementById("calendar-content");
 	var week = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -76,9 +111,10 @@ var showDate = function(year,month,blank){
 		node.className = "weekdays";
 		div.appendChild(node);
 		
-		if(j === d){
+		if(j === d && curMonth == todayM && curYear == todayY){ 
 			curr = j;
+			document.getElementsByClassName("weekdays")[curr + 6 + blank].style.color = "yellow";
 		}
 	}	
-	document.getElementsByClassName("weekdays")[curr + 6 + blank].style.color = "yellow";
+	
 }
