@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		.weather-sun{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		
+		.sun{
+			width: 100px;
+			height: 100px;
+			background: linear-gradient(45deg,#F3A966,yellow);
+			border-radius: 100%;
+			transform: rotate(0deg);
+			animation: xuanzhuang 12s infinite linear;
+		}
+		
+		.rays{
+			width: 8px;
+			height: 15px;
+			background: yellow;
+			position: absolute;
+			transform: translateX(-50%);
+			left: 50%;
+			top: -25px;
+			box-shadow: 0 135px yellow;
+			border-radius: 4px;
+			transform-origin: 0px 75px;
+		}
+		
+		.rays:nth-child(2){
+			transform: rotate(45deg);
+		}
+		
+		.rays:nth-child(3){
+			transform: rotate(90deg);
+		}
+		
+		.rays:nth-child(4){
+			transform: rotate(135deg);
+		}
+		
+		@keyframes xuanzhuang {
+		  100% { transform: rotate(360deg); }
+		}
+	</style>
+	<body>
+		<div class="weather-sun">
+			<div class="sun">
+				<div class="rays"></div>
+				<div class="rays"></div>
+				<div class="rays"></div>
+				<div class="rays"></div>
+			</div>
+		</div>
+	</body>
+</html>
