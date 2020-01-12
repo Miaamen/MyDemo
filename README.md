@@ -13,3 +13,5 @@
 6.20/01/03demo：学习使用max-width和opacity实现字母的隐藏和可见 --- https://codepen.io/miaamen/pen/oNgopYz
 
 7.20/01/04demo：日历的实现--目前静态不可翻页 --- https://codepen.io/miaamen/pen/QWwOopv
+
+8.20/01/12demo：CSS画一个小太阳，学习transform-origin在transform的用法 --- https://codepen.io/miaamen/pen/BayxEMQ
