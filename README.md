@@ -15,3 +15,5 @@
 7.20/01/04demo：日历的实现--目前静态不可翻页 --- https://codepen.io/miaamen/pen/QWwOopv
 
 8.20/01/12demo：CSS画一个小太阳，学习transform-origin在transform的用法 --- https://codepen.io/miaamen/pen/BayxEMQ
+
+9.20/01/13demo：CSS画一个雪花，使用box-shadow --- https://codepen.io/miaamen/pen/VwYdmNP
