@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.cloud{
+				margin: 200px auto;
+				border-radius: 25px;
+				position: relative;
+				
+			}
+			
+			.c1{
+				width: 150px;
+				height: 50px;
+				background: skyblue;
+			}
+			
+			.c2{
+				width: 120px;
+				height: 40px;
+				background: lightblue;
+			}
+			
+			.c1::after,.c1::before{
+				content: '';
+				display: block;
+				background: skyblue;
+				border-radius: 50%;
+				position: absolute;
+				
+			}
+			
+			.c2::after,.c2::before{
+				content: '';
+				display: block;
+				background: lightblue;
+				border-radius: 50%;
+				position: absolute;
+				
+			}
+			
+			.c1::after{
+				width: 80px;
+				height: 80px;
+				left: 45px;
+				top: -45px;
+			}
+			
+			.c1::before{
+				width: 60px;
+				height: 60px;
+				top: -10px;
+				left: 0;
+			}
+			
+			.c2::after{
+				width: 60px;
+				height: 60px;
+				left: 40px;
+				top: -35px;
+			}
+			
+			.c2::before{
+				width: 50px;
+				height: 50px;
+				top: -10px;
+				left: -2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cloud c1"></div>
+		<div class="cloud c2"></div>
+	</body>
+</html>
