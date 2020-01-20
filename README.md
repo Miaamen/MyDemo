@@ -19,3 +19,5 @@
 9.20/01/13demo：CSS画一个雪花，使用box-shadow --- https://codepen.io/miaamen/pen/VwYdmNP
 
 10.20/01/19demo：CSS画一个云朵
+
+11.20/01/20demo：纯CSS实现的weather-icon，包括小太阳、多云、下雪、下雨、晴云，对transform、transform-origin、animation、box-shadow、z-index几个属性进行复习和使用 --- https://codepen.io/miaamen/pen/mdyQxPy
