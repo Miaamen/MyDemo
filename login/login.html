@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login/sign up</title>
+	<style type="text/css">
+		@charset "UTF-8";
+        *{
+			font-family: montserrat;
+			box-sizing: border-box;
+		}
+		body{
+			min-height: 100vh;
+			background-image: linear-gradient(#fce7f0,#f5c7dc);
+		}
+
+		.switch{
+			cursor: pointer;
+			margin-top: 50px;
+			line-height: 80px;
+			text-align: center;
+		}
+
+		.switch span{
+			color: #ccc;
+			font-size: 1.4rem;
+		}
+
+		.switch .active{
+			color: #da7ca7;
+		}
+
+		.box{
+			width: 70%;
+			height: 90%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			background: #fff;
+		}
+
+		.box img{
+			width: 65%;
+			height: 100%;
+			float: left;
+		}
+
+		.login-form{
+			width: 35%;
+			height: 100%;
+			padding: 40px 40px;
+			background: #fff;
+			float: right;
+		}
+
+		.login-form h2{
+			color: #5e64b3;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		
+		.login-form .login2{
+			margin-bottom: 30px;
+		}
+		.text{
+			border-bottom: 1px solid #ccc;
+			position: relative;
+			margin: 40px auto;
+		}
+
+		.text input{
+			font-size: 15px;
+			color: #333;
+			border : none;
+			width: 100%;
+			background: none;
+			padding: 0 5px;
+			height: 40px;
+			outline: none;
+		}
+
+		.text span::before{
+			content: attr(placeholder);
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			color: #9f9f9f;
+			transform: translateY(-50%);
+			transition: 0.5s;
+		}
+
+		.focus + span::before{
+			top: -5px;
+		}
+
+		.text + .focus{
+			border-bottom: 1px solid red;
+		}
+
+		.check{
+			padding: 10px 0px 30px 40px;
+			font-size: 16px;
+			color: #5e64b3;
+			font-weight: 500;
+		}
+
+		.check-input{
+			margin-right: 50px;
+		}
+
+		.loginBtn{
+			display: block;
+			width: 100%;
+			height: 50px;
+			border: none;
+			background: #dfa2c4;
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			transition: 0.5s;
+			margin-top: 80px
+		}
+
+		.loginBtn:hover{
+			background: #5e64b3;
+		}
+
+		.signUp{
+			margin-top: 60px;
+			text-align: center;
+			font-size: 15px;
+		}
+
+		a{
+			text-decoration: none;
+		}
+
+		#que{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="66.jpeg">
+		<form action="toThis" method="post" class="login-form">
+			<div class="switch">
+				<span id="login" class="active">Login</span><span id="sign">/Sign Up</span>
+			</div>
+			<div class="text">
+				<input type="text" class="in" name="name" id="inputEmail">
+				<span placeholder ="用户名"></span>
+			</div>
+			<div class="text">
+				<input type="password" class="in" name="password">
+				<span placeholder ="密码"></span>
+			</div>
+
+			<div class="text" id="que">
+				<input type="password" class="in" name="password">
+				<span placeholder ="确认密码"></span>
+			</div>
+			<input type="submit" id="btn" class="loginBtn" value="login">
+		</form>
+	</div>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var inp1 = document.getElementsByTagName("input")[0];
+		var inp2 = document.getElementsByTagName("input")[1];
+		var inp3 = document.getElementsByTagName("input")[2];
+		inp1.onfocus = function(){
+			inp1.classList.add("focus");
+		}
+		inp2.onfocus = function(){
+			inp2.classList.add("focus");
+		}
+		inp3.onfocus = function(){
+			inp3.classList.add("focus");
+		}
+		inp1.onblur = function(){
+			if(inp1.value.length==0){
+				inp1.classList.remove("focus");
+			}
+		}
+		inp2.onblur = function(){
+			if(inp2.value.length==0){
+				inp2.classList.remove("focus");
+			}
+		}
+		inp3.onblur = function(){
+			if(inp3.value.length==0){
+				inp3.classList.remove("focus");
+			}
+		}
+
+		var que = document.getElementById("que");
+		var btn = document.getElementById("btn");
+
+		$("#login").click(function(){
+			$('.switch span').removeClass('active');
+			$(this).addClass('active');
+			que.style.display="none";
+			btn.value = "Login"
+		})
+		$("#sign").click(function(){
+			$('.switch span').removeClass('active');
+			$(this).addClass('active');
+			que.style.display="block";
+			btn.value = "Sign Up"
+		})
+	</script>
+</body>
+</html>
