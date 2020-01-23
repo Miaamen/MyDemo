@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			body{
+				background: #ddc8e3;
+			}
+			
+			#todolist{
+				width: 400px;
+				height: 600px;
+				/*border-radius: 15px;*/
+				margin: 50px auto;
+				background: #fff;
+				box-shadow: 15px 15px 30px 0 #9d9d9d;
+			}
+			
+			#todolist .header{
+				width: 100%;
+				height: 80px;
+				line-height: 80px;
+				font-family: 'Microsoft YaHei',fantasy;
+				color: #b073c1;
+				text-align: center;
+				border-bottom: 1px dashed #DDC8E3;
+			} 
+			
+			.header .weekday{
+				font-size: 1.5em;
+				font-weight: 900;
+			}
+			
+			.header p{
+				display: inline-block;
+				line-height: 40px;
+			}
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="todolist">
+			<div class="header">
+				<span class="weekday">
+					{{ weekday }}
+				</span>
+				<span class="date">
+					, {{ month }} {{ day }}th
+				</span>
+			</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el : "#todolist",
+				data : {
+					weekday : '',
+					month : '',
+					day : ''
+				},
+				created(){
+					var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+					var month = ['January ','February ','March ','April ','May ','June ','July ','August ','September ','October ','November ','December '];
+					var today = new Date();
+					var dd = today.getDate();
+					var mm = today.getMonth()+1; //January is 0!
+					this.weekday = weekday[today.getDay()];
+					this.month = month[mm];
+					this.day = dd;
+				}
+			})
+		</script>
+	</body>
+</html>
