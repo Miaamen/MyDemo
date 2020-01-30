@@ -60,7 +60,6 @@
 				border: none;
 				border-radius: 4px;
 				margin-left: 10px;
-				background: #DDC8E3;
 				font-size: 1.3em;
 				color: #FFFFFF;
 			}
@@ -78,13 +77,13 @@
 			}
 			
 			li{
-				padding: 10px 0;
+				margin: 10px 0;
 				line-height: 25px;
 				font-size: 1.2em;
 				color: #B073C1;
 				position: relative;
-				word-break:break-all
-				
+				word-break:break-all;
+				width: 100%;
 			}
 			
 			.todo-checkbox{
@@ -105,7 +104,7 @@
 				width: 24px;
 				height: 25px;
 				border-radius: 2px;
-				border: 1px solid #cfdcec;
+				border: 1px solid #DDC8E3;
 				background-color: #fff;
 			}
 			
@@ -118,6 +117,7 @@
 			
 			input[type="checkbox"]:checked ~ .todoText{
 				text-decoration: line-through;
+				font-style: italic;
 				color: #ded1df;
 			}
 
@@ -126,6 +126,19 @@
 				padding: 0 50px;
 				padding-right: 90px;
 			}	
+			
+			.inputTodo::placeholder{
+				color: #DDC8E3;
+			}
+			
+			.btnChangeColor1{
+				background: #c598d2;
+			}
+			
+			.btnChangeColor2{
+				background: #DDC8E3;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -140,26 +153,20 @@
 			</div>
 			
 			<div>
-				<p class="countList">You have {{ list.length }} list<span v-if="list.length > 1">s</span>:</p>
-				<ul>
-					<li>
+				<p class="countList">You have {{ lists.length }} list<span v-if="lists.length > 1">s</span>:</p>
+				<ul v-if="lists.length > 0">
+					<li class="todoLists" v-for="list in lists">
 						<input type="checkbox" class="todo-checkbox" />
 						<label></label>
-						<span class="todoText">hellosdsadfdasfsdafsdafsfdsfsfdsfdsfdsfsfsdfdsdfddafsdffsfsdf</span>
-						<span class="deleteList"></span>
-					</li>
-					<li>
-						<input type="checkbox" class="todo-checkbox" />
-						<label></label>
-						<span class="todoText">hello</span>
+						<span class="todoText">{{ list }}</span>
 						<span class="deleteList"></span>
 					</li>
 				</ul>
 			</div>
 			
 			<div id="addList">
-				<input class="inputTodo" type="text" placeholder="write what you want to do" />
-				<button class="addBtn"> + </button>
+				<input class="inputTodo" type="text" placeholder="write what you want to do" v-model="inputValue"  v-on:keyup.enter="addList"/>
+				<button class="addBtn" v-bind:class="inputValue === '' ? btnChangeColor2 : btnChangeColor1" @click="addList()"> + </button>
 			</div>
 		</div>
 		<script>
@@ -169,7 +176,10 @@
 					weekday : '',
 					month : '',
 					day : '',
-					list : [2,2]
+					lists : [],
+					inputValue : '',
+					btnChangeColor1 : 'btnChangeColor1',
+					btnChangeColor2 : 'btnChangeColor2'
 				},
 				created(){
 					var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -180,7 +190,16 @@
 					this.weekday = weekday[today.getDay()];
 					this.month = month[mm];
 					this.day = dd;
+				},
+				methods : {
+					addList(){//添加一个备忘
+						this.lists.push(this.inputValue);
+						this.inputValue = '';
+					} 
+					
+					
 				}
+				
 			})
 		</script>
 	</body>
