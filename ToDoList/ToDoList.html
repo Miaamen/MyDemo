@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<link rel="stylesheet" href="todolist.css"/>
+	</head>
+	<body>
+		<div id="todolist">
+			<div class="header">
+				<span class="weekday">
+					{{ weekday }}
+				</span>
+				<span class="date">
+					, {{ month }} {{ day }}th
+				</span>
+			</div>
+			
+			<div>
+				<p class="countList">You have {{ lists.length }} list<span v-if="lists.length > 1">s</span> , {{ doneLists.length }} done list<span v-if="doneLists.length > 1">s</span>:</p>
+				<ul v-if="lists.length > 0">
+					<li class="todoLists" v-for="list in lists">
+						<input type="checkbox" class="todo-checkbox"@click="doneList(list)"/>
+						<label></label>
+						<span class="todoText">{{ list }}</span>
+						<span class="deleteList" @click="deleteList(list)"></span>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="addList">
+				<input class="inputTodo" type="text" placeholder="write what you want to do" v-model="inputValue"  v-on:keyup.enter="addList"/>
+				<button class="addBtn" v-bind:class="inputValue === '' ? btnChangeColor2 : btnChangeColor1" @click="addList()"> + </button>
+			</div>
+		</div>
+		<script src="todolist.js"></script>
+	</body>
+</html>
