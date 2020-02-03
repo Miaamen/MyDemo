@@ -14,17 +14,17 @@
 					{{ weekday }}
 				</span>
 				<span class="date">
-					, {{ month }} {{ day }}th
+					, {{ month }} {{ day }}<span v-if="day === 1">st</span><span v-if="day === 2">nd</span><span v-if="day=== 3">rd</span><span v-if="day > 3">th</span>
 				</span>
 			</div>
 			
 			<div>
-				<p class="countList">You have {{ lists.length }} list<span v-if="lists.length > 1">s</span> , {{ doneLists.length }} done list<span v-if="doneLists.length > 1">s</span>:</p>
+				<p class="countList">You have {{ lists.length }} list<span v-if="lists.length">s</span> , {{ Done }} done list<span v-if="Done > 1">s</span>:</p>
 				<ul v-if="lists.length > 0">
 					<li class="todoLists" v-for="list in lists">
-						<input type="checkbox" class="todo-checkbox"@click="doneList(list)"/>
-						<label></label>
-						<span class="todoText">{{ list }}</span>
+						<input type="checkbox" class="todo-checkbox" @click="doneList(list)"/>
+						<label class="beforeCheck" v-bind:class="list.finished == false ? '' : 'checked'"></label>
+						<span class="todoText" v-bind:class="list.finished == false ? '' : 'checkedText'">{{ list.text }}</span>
 						<span class="deleteList" @click="deleteList(list)"></span>
 					</li>
 				</ul>
