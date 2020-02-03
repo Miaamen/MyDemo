@@ -54,7 +54,9 @@
 					},
 					deleteList(list){
 						this.lists.splice(this.lists.indexOf(list),1);
-						this.Done --;
+						if(this.Done != 0){
+							this.Done --;
+						}
 					},
 					doneList(list){
 						if(list.finished === false){
@@ -62,7 +64,9 @@
 							this.Done ++;
 						}else{
 							this.lists[list.id].finished = false;
-							this.Done --;
+							if(this.Done != 0){
+								this.Done --;
+							}
 						}
 						console.log(list.id)
 					}
