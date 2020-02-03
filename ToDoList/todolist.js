@@ -28,7 +28,6 @@
 					inputValue : '',
 					btnChangeColor1 : 'btnChangeColor1',
 					btnChangeColor2 : 'btnChangeColor2',
-					Done : 0
 				},
 				created(){
 					var weekday = ["Sunday","Monday","Tuesday","Wednesday",
@@ -43,7 +42,6 @@
 					this.day = dd;
 					
 					this.lists = myStorage.get('lists') || [];
-					this.Done = myStorage.get('Done') || 0;
 				},
 				methods : {
 					addList(){//添加一个备忘
@@ -54,19 +52,12 @@
 					},
 					deleteList(list){
 						this.lists.splice(this.lists.indexOf(list),1);
-						if(this.Done != 0){
-							this.Done --;
-						}
 					},
 					doneList(list){
 						if(list.finished === false){
 							this.lists[list.id].finished = true;
-							this.Done ++;
 						}else{
 							this.lists[list.id].finished = false;
-							if(this.Done != 0){
-								this.Done --;
-							}
 						}
 						console.log(list.id)
 					}
@@ -79,16 +70,6 @@
 								myStorage.set('lists',newVal)
 							}else{
 								myStorage.set('lists',oldVal)
-							}
-						}
-					},
-					Done : {
-						deep : true,
-						handler : function(newVal,oldVal){
-							if(newVal){
-								myStorage.set('Done',newVal)
-							}else{
-								myStorage.set('Done',oldVal)
 							}
 						}
 					}
