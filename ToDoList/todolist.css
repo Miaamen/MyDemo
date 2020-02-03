@@ -90,7 +90,7 @@
 				cursor: pointer;
 			}
 
-			.todo-checkbox + label {
+			.todo-checkbox + .checked ,.todo-checkbox + .beforeCheck{
 				position: absolute;
 				cursor: pointer;
 				left: 10px;
@@ -103,14 +103,14 @@
 				background-color: #fff;
 			}
 			
-			input[type="checkbox"]:checked + label::before{
+			.checked::after{
 				content: '\2714';
 				padding-left: 4px;
 				color: #B073C1;
 			}
 			
 			
-			input[type="checkbox"]:checked ~ .todoText{
+			.checkedText{
 				text-decoration: line-through;
 				font-style: italic;
 				color: #ded1df;
