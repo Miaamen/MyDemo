@@ -19,7 +19,7 @@
 			</div>
 			
 			<div>
-				<p class="countList">You have {{ lists.length }} list<span v-if="lists.length">s</span> , {{ Done }} done list<span v-if="Done > 1">s</span>:</p>
+				<p class="countList">Just Do IT!</p>  <!--觉得计数没意思，换成自己的激励语-->
 				<ul v-if="lists.length > 0">
 					<li class="todoLists" v-for="list in lists">
 						<input type="checkbox" class="todo-checkbox" @click="doneList(list)"/>
