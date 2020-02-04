@@ -26,3 +26,7 @@
 12.20/01/22demo：jQuery实现的注册登录表单（提示文字上移动画）--- jQuery的学习demo，进入Vue
 
 13.20/01/23demo：使用Vue.js获得实时本地时间demo
+
+14.20/02/03demo：Vue.js + localStorage写一个简单的todolist --- https://codepen.io/miaamen/pen/JjoQMbM
+
+15.20/02/04demo：SVG的stroke-dasharray+stroke-dashoffset+animation可以作出霓虹灯效果，而stroke-dasharray+animation可以作出绘制的效果 --- https://codepen.io/miaamen/pen/qBdWmPJ
