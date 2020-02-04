@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body{
+				background: #23263a;
+			}
+			
+			.text{
+				font-size: 64px;
+				font-weight: 400;
+				font-family: "arial narrow";
+				fill: none;
+				stroke-width: 3px;
+				stroke-dasharray : 90 300;
+				animation: stroke 10s infinite linear;
+			}
+			
+			.text1{
+				stroke: #abb8ff;
+				text-shadow: 0 0 7px #ABB8FF;
+				animation-delay: -2.5s;
+			}
+			
+			.text2{
+				stroke: #b5ebb5;
+				text-shadow: 0 0 7px #B5EBB5;
+				animation-delay: -5s;
+			}
+			
+			.text3{
+				stroke: #e9a5d0;
+				text-shadow: 0 0 7px #E9A5D0;
+				animation-delay: -7.5s;
+			}
+			
+			.text4{
+				stroke: #f8f88d;
+				text-shadow: 0 0 7px #F8F88D;
+				animation-delay: -10s;
+			}
+			
+			@keyframes stroke{
+				100%{
+					stroke-dashoffset: -390;
+				}
+			}
+			
+			.text5{
+				font-size: 64px;
+				font-weight: 400;
+				font-family: "arial narrow";
+				text-shadow: 0 0 1px plum;
+				fill: none;
+				stroke: plum;
+				stroke-width: 3px;
+				stroke-dasharray : 0 400;
+				animation: stroke2 10s infinite linear;
+			}
+			
+			
+			
+			@keyframes stroke2{
+				100%{
+					stroke-dasharray : 400 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+			<text text-anchor="middle" x="50%" y="50%" class="text text1">DISCO</text>
+			<text text-anchor="middle" x="50%" y="50%" class="text text2">DISCO</text>
+			<text text-anchor="middle" x="50%" y="50%" class="text text3">DISCO</text>
+			<text text-anchor="middle" x="50%" y="50%" class="text text4">DISCO</text>
+			
+			<text text-anchor="middle" x="50%" y="95%" class="text5">有点酷</text>
+		</svg>
+	</body>
+</html>
