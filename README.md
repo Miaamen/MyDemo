@@ -30,3 +30,5 @@
 14.20/02/03demo：Vue.js + localStorage写一个简单的todolist --- https://codepen.io/miaamen/pen/JjoQMbM
 
 15.20/02/04demo：SVG的stroke-dasharray+stroke-dashoffset+animation可以作出霓虹灯效果，而stroke-dasharray+animation可以作出绘制的效果 --- https://codepen.io/miaamen/pen/qBdWmPJ
+
+16.20/02/08demo：轮播图组件 --- https://codepen.io/miaamen/pen/KKpwyoX
