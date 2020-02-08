@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.container{
+				width: 800px;
+				height: 400px;
+				position: relative;
+				margin: 100px auto;
+			}
+			
+			.list{
+				width: 800px;
+				height: 400px;
+				list-style: none;
+				position: relative;
+				padding: 0;
+			}
+			
+			.item{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				opacity: 0;
+				transition: 1s;
+			}
+			
+			.item img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.item:nth-child(1){
+				background: #ABB8FF;
+			}
+			
+			.item:nth-child(2){
+				background: #B5EBB5;
+			}
+			
+			.item:nth-child(3){
+				background: #DDA0DD;
+			}
+			
+			.item:nth-child(4){
+				background: lemonchiffon;
+			}
+			
+			.item:nth-child(5){
+				background: salmon;
+			}
+			
+			.btn{
+				position: absolute;
+				width: 40px;
+				height: 60px;
+				top: 180px;
+				z-index: 2;
+				background: transparent;
+				border: none;
+				font-size: 32px;
+				color: #fff;
+				cursor: pointer;
+				outline: none;
+			}
+			
+			#getPre{
+				left: 0;
+			}
+			
+			#getNext{
+				right: 0;
+			}
+			
+			.active{
+				opacity: 1;
+				z-index: 1;
+			}
+			
+			.pointList{
+				padding: 0;
+				list-style: none;
+				z-index: 2;
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			
+			.point{
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				float: left;
+				margin-right: 14px;
+				background: #23263A;
+				opacity: 0.8;
+				transition: 0.3s;
+			}
+			
+			.point:hover{
+				background: #fff;
+				cursor: pointer;
+			}
+			
+			.pointGoPage{
+				background: #fff;
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul class="list">
+				<li class="item active"><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2870279334,1073403531&fm=26&gp=0.jpg"></li>
+				<li class="item"><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3622049989,1474776740&fm=26&gp=0.jpg"></li>
+				<li class="item"><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2174002182,3539429837&fm=26&gp=0.jpg"></li>
+				<li class="item"><img src="http://img3.imgtn.bdimg.com/it/u=4164165567,1635644194&fm=26&gp=0.jpg"></li>
+				<li class="item"><img src="http://img4.imgtn.bdimg.com/it/u=1476416617,2236794255&fm=26&gp=0.jpg"></li>
+			</ul>
+			<ul class="pointList">
+				<li class="point pointGoPage"></li>
+				<li class="point"></li>
+				<li class="point"></li>
+				<li class="point"></li>
+				<li class="point"></li>
+			</ul>
+			<button class="btn" id="getPre"><</button>
+			<button class="btn" id="getNext">></button>
+		</div>
+		
+		<script>
+			var items = document.getElementsByClassName('item');
+			var getPreBtn = document.getElementById('getPre');
+			var getNextBtn = document.getElementById('getNext');
+			var points = document.getElementsByClassName('point');
+			var time = 0;
+			
+			var index = 0;
+			var changeIndex = function(){
+				for(let i = 0; i < items.length; i ++){
+					items[i].className = "item";
+					points[i].className = 'point';
+				}
+				items[index].className = 'item active';
+				points[index].className = 'point pointGoPage';
+				time = 0;
+			}
+			
+			var getNext = function(){
+				if(index < items.length - 1){
+					index ++;
+				}else{
+					index = 0;
+				}
+				changeIndex();
+			}
+			
+			getNextBtn.addEventListener('click',function(){
+				getNext();
+			})
+			
+			var getPre = function(){
+				if(index == 0){
+					index = items.length - 1;
+				}else{
+					index --;
+				}
+				changeIndex();
+			}
+			
+			getPreBtn.addEventListener('click',function(){
+				getPre();
+			})
+			
+			for(let i = 0; i < points.length; i ++){
+				points[i].addEventListener('click',function(){
+					index = i;
+					changeIndex();
+					time = 0;
+				})
+			}
+			
+			setInterval(function(){
+				time ++;
+				if(time == 20){
+					getNext();
+					time = 0;
+				}
+			},100);
+				
+			
+		</script>
+		
+	</body>
+</html>
