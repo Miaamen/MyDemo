@@ -32,3 +32,5 @@
 15.20/02/04demo：SVG的stroke-dasharray+stroke-dashoffset+animation可以作出霓虹灯效果，而stroke-dasharray+animation可以作出绘制的效果 --- https://codepen.io/miaamen/pen/qBdWmPJ
 
 16.20/02/08demo：轮播图组件 --- https://codepen.io/miaamen/pen/KKpwyoX
+
+17.20/02/09demo：情人节的简单css玫瑰画 --- https://codepen.io/miaamen/pen/ZEGYVew
