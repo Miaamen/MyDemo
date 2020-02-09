@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="https://fonts.font.im/css?family=Sacramento" rel="stylesheet">
+		<style>
+			body{
+				background: #fadede;
+			}
+			
+			.container{
+				width: 800px;
+				height: 400px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			
+			h1{
+				font-family: 'Sacramento', cursive;
+				color: #FE7696;
+				font-size: 64px;
+			}
+			
+			.letter{
+				width: 600px;
+				height: 400px;
+				display: inline-block;
+			}
+			
+			.rose{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				right: 0;
+				display: inline-block;
+				animation: move 5s infinite;
+				transform: translateY(40%);
+			}
+			
+			.petal{
+				width: 50px;
+				height: 50px;
+				background: #fe7696;
+				border-radius: 0px 50%;
+				position: absolute;
+				box-shadow: 0 0 10px #D1123F;
+				z-index: 2;
+				transform-origin: bottom right; 
+				animation: open-2 10s infinite;
+				
+			}
+			
+			.petal:nth-child(2){
+				transform-origin: right bottom;
+				transform: rotate(90deg);
+				background: #fe7696;
+				left: -10px;
+				animation: open-1 10s infinite;
+			}
+			
+			.petal:nth-child(3){
+				width: 40px;
+				height: 40px;
+				left: 10px;
+				top: -20px;
+				z-index: 1;
+				background: #f03a64;
+				transform-origin: bottom right; 
+				animation:open-2 10s infinite;
+			}
+			
+			.petal:nth-child(4){
+				transform: rotate(90deg);
+				width: 40px;
+				height: 40px;
+				left: 0px;
+				top: -20px;
+				z-index: 1;
+				background: #f03a64;
+				transform-origin: bottom right; 
+				animation: open-1 10s infinite;
+			}
+			
+			.petal:nth-child(5){
+				width: 50px;
+				height: 50px;
+				border-radius: 20px;
+				left: 20px;
+				top: -30px;
+				z-index: 0;
+				background: #d1123f;
+				
+			}
+			
+			.leaf{
+				position: absolute;
+				top: 120px;
+				left: -115px;
+			}
+			
+			.stem{
+				width: 240px;
+				height: 40px;
+				background: transparent;
+				border: 8px solid #8ac78a;
+				border-color: #77a377 transparent transparent transparent;
+				border-radius: 50% 50%;
+				transform: rotate(100deg);
+			}
+			
+			.leaves{
+				width: 50px;
+				height: 40px;
+				border-radius: 0px 50%;
+				background: #77a377;
+				position: absolute;
+				top: 0;
+				left: 100px;
+				z-index: 49;
+			}
+			
+			.leaves:nth-child(2){
+				width: 40px;
+				height: 20px;
+				top: 40px;
+				left: 140px;
+				transform: rotate(120deg);
+			}
+			
+			@keyframes move{
+				50%{
+					transform: translateY(35%);
+				}
+				100%{
+					transform: translateY(40%);
+				}
+			}
+			
+			@keyframes open-1{
+				50%{
+					transform: rotate(110deg);
+				}
+				100%{
+					transform: rotate(90deg);
+				}
+			}
+			
+			@keyframes open-2{
+				50%{
+					transform: rotate(-20deg);
+				}
+				100%{
+					transform: rotate(0deg);
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="letter">
+				<h1>Your smile is as beautiful as rose, I hope you can always smile. (✿◡w◡)</h1>
+			</div>
+			<div class="rose">
+				<div class="flower">
+					<div class="petal"></div>
+					<div class="petal"></div>
+					<div class="petal"></div>
+					<div class="petal"></div>
+					<div class="petal"></div>
+				</div>
+				<div class="leaf">
+					<div class="stem"></div>
+					<div class="leaves"></div>
+					<div class="leaves"></div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
