@@ -34,3 +34,7 @@
 16.20/02/08demo：轮播图组件 --- https://codepen.io/miaamen/pen/KKpwyoX
 
 17.20/02/09demo：情人节的简单css玫瑰画 --- https://codepen.io/miaamen/pen/ZEGYVew
+
+18.20/02/15demo：SVG写的一个加载图标
+
+19.20/02/21demo：高斯模糊（毛玻璃）背景效果，filter: blur()和background-attachment: fixed是关键 --- https://codepen.io/miaamen/pen/MWwjMgB
