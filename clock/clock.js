@@ -4,7 +4,13 @@ var vm = new Vue({
 		date : '',
 		time : '',
 		idol : 'Good good study , day day up',
-		colorNum : 'color-1'
+		colorNum : 'color-2'
+	},
+	methods : {
+		changeColor(color){
+			this.colorNum = color;
+			console.log(color);
+		}
 	}
 });
 
