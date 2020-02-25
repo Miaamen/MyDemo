@@ -5,22 +5,23 @@
 		<title></title>
 		<link href="https://fonts.font.im/css?family=Share+Tech+Mono" rel="stylesheet">
 		<link rel="stylesheet" href="clock.css" />
-		<script src="vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!--改为CDN-->
 	</head>
 	<body>
-		<div id="clock">
+		<div id="clock" :class="colorNum">
 			<p class="date">{{ date }}</p>
 			<p class="time">{{ time }}</p>
 			<p class="idol">{{ idol }}</p>
+		
+		
+			<div id="change-color">
+				<div class="get-color get-color-red" @click="changeColor('color-1')"></div>
+				<div class="get-color get-color-blue" @click="changeColor('color-2')"></div>
+				<div class="get-color get-color-yellow" @click="changeColor('color-3')"></div>
+				<div class="get-color get-color-green" @click="changeColor('color-4')"></div>
+			</div>
 		</div>
-		
-		<!--<div id="change-color">
-			<div class="get-color get-color-red"></div>
-			<div class="get-color get-color-blue"></div>
-			<div class="get-color get-color-yellow"></div>
-			<div class="get-color get-color-green"></div>
-		</div>-->
-		
 		<script src="clock.js"></script>
 	</body>
 </html>
