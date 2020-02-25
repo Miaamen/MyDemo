@@ -14,10 +14,7 @@ p{
 	transform: translate(-50%,-50%);
 	text-align: center;
 	font-family: 'Share Tech Mono', monospace;
-	color: #ffdeff;
-	text-shadow: 0 0 10px #874987,
-				0 0 20px #a33ca3,
-				0 0 50px #280b28;
+	min-width: 9em;
 }
 
 .color-1{
@@ -61,10 +58,7 @@ p{
 }
 
 #change-color{
-	position: absolute;
-	left: 50%;
-	top: 80%;
-	transform: translate(-50%,-50%);
+	padding-top: 50px;
 }
 
 .get-color{
