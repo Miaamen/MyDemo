@@ -1,0 +1,105 @@
+body{
+	background: #2e2c32;
+}
+
+p{
+	padding: 0;
+	margin: 0;
+}
+
+#timer{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	font-family: 'Share Tech Mono', monospace;
+	min-width: 9em;
+}
+
+.color-1{
+	color: #ffdeff;
+	text-shadow: 0 0 10px #874987,
+				0 0 20px #a33ca3,
+				0 0 50px #280b28;
+}
+
+.color-2{
+	color: #dee5ff;
+	text-shadow: 0 0 10px #7084cb,
+				0 0 20px #3c47a3,
+				0 0 50px #0b132b;
+}
+
+.color-3{
+	color: #faffde;
+	text-shadow: 0 0 10px #959552,
+				0 0 20px #71701a,
+				0 0 50px #231e07;
+}
+
+.color-4{
+	color: #e9ffee;
+	text-shadow: 0 0 10px #62a25a,
+				0 0 20px #1c5521,
+				0 0 50px #132709;
+}
+
+.date{
+	font-size: 2.5em;
+}
+
+.time{
+	font-size: 10em;
+}
+
+.idol{
+	font-size: 1.5em;
+}
+
+#change-color{
+	padding-top: 50px;
+}
+
+.get-color{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	margin: 10px;
+}
+
+.get-color-blue{
+	background: #dee5ff;
+	box-shadow: 0 0 10px #dee5ff;
+}
+
+.get-color-red{
+	background: #ffdeff;
+	box-shadow: 0 0 10px #ffdeff;
+}
+
+.get-color-yellow{
+	background: #faffde;
+	box-shadow: 0 0 10px #faffde;
+}
+
+.get-color-green{
+	background: #e9ffee;
+	box-shadow: 0 0 10px #e9ffee;
+}
+
+.btn{
+	width: 80px;
+	margin: 80px 10px 0 10px;
+	font-size: 1.2em;
+	background: silver;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.btn:hover{
+	box-shadow: 0 0 10px beige;
+}
