@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="https://fonts.font.im/css?family=Share+Tech+Mono" rel="stylesheet">
+		<link rel="stylesheet" href="timer.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="timer" :class="colorNum">
+			<p class="time">{{ hours }}:{{ minutes }}:{{ seconds }}</p>
+			
+			<div class="action">
+				<button class="btn" @click="start">{{ startOrReset }}</button>
+				<button class="btn" @click="stop">Stop</button>
+			</div>
+		
+			<div id="change-color">
+				<div class="get-color get-color-red" @click="changeColor('color-1')"></div>
+				<div class="get-color get-color-blue" @click="changeColor('color-2')"></div>
+				<div class="get-color get-color-yellow" @click="changeColor('color-3')"></div>
+				<div class="get-color get-color-green" @click="changeColor('color-4')"></div>
+			</div>
+		
+		</div>
+		
+		<script src="timer.js"></script>
+	</body>
+</html>
