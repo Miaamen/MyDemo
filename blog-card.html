@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			body{
+				background: #ebdfeb;
+			}
+			
+			.blog-card{
+				width: 500px;
+				height: 200px;
+				border-radius: 10px;
+				box-shadow: 5px 5px 10px #a2a1a6;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				background: #fff;
+				overflow: hidden;
+			}
+			
+			.blog-card:hover .post-title{
+				color: #da9595;
+			}
+			
+			.post-image{
+				border-radius: 10px 0 0 10px;
+				float: left;
+				overflow: hidden;
+			}
+			
+			.img{
+				width: 150px;
+				height: 200px;
+				object-fit: cover; 
+				transition: 0.5s;
+			}
+			
+			.img:hover{
+				border-radius: 10px 0 0 10px;
+				transform: scale(1.2);
+			}
+			
+			.article-details{
+				margin: 20px 20px;
+				width: 300px;
+				height: 100%;
+				float: right;
+			}
+			
+			.post-title{
+				font-size: 1.1em;
+				text-transform: uppercase;
+				color: #676767;
+				transition: .5s;
+			}
+			
+			.post-description{
+				font-size: 0.9em;
+				color: #7c7474;
+			}
+			
+			.post-date{
+				font-size: 0.8em;
+				color: #b9b6c4;
+			}
+			
+			.read-more,.arrow{
+				float: right;
+				font-size: 0.85em;
+				color: #b194c7;
+				font-weight: 600;
+				transition: 1s;
+			}
+			
+			.arrow{
+				display: none;
+			}
+			
+			.read-more{
+				text-decoration: underline;
+			}
+			
+			.read-more:hover .arrow{
+				display: inline;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<blog-card></blog-card>
+		</div>
+
+		<script type="text/x-template" id="blog-card">
+			<a class="card-link" href="#">
+				<article class="blog-card">
+					<div class="post-image">
+						<img class="img" :src="image" />
+					</div>
+					
+					<div class="article-details">
+						<h3 class="post-title">{{ name }}</h3>
+						<p class="post-description">{{ desc }}</p>
+						<span class="post-date">📌 {{ date }}</span>
+						<span class="read-more">READ MORE<span class="arrow">&nbsp&nbsp(oﾟvﾟ)ノ</span></span>
+					</div>
+				</article>
+			</a>
+		</script>
+			
+		<script>
+			Vue.component('blog-card', {
+				template: '#blog-card',
+				data: () => ({
+					name: 'Sass学习笔记 --- 思维导图',
+					category: 'Sass',
+					image: 'http://img.php.cn/upload/article/000/000/013/bfe3c574e8757b9d1ce400aec7da9033.jpg',
+					date: '28 FEB 2020',
+					desc: `Sass 是 CSS 扩展语言，可以帮助我们减少 CSS 重复的代码，节省开发时间,Sass是一个将脚本解析成CSS的脚本语言，即SassScript...`
+			  })
+			});
+
+			new Vue({
+			  el: '#container'
+			});
+		</script>
+	</body>
+</html>
