@@ -38,3 +38,5 @@
 18.20/02/15demo：SVG写的一个加载图标
 
 19.20/02/21demo：高斯模糊（毛玻璃）背景效果，filter: blur()和background-attachment: fixed是关键 --- https://codepen.io/miaamen/pen/MWwjMgB
+
+20.20/02/28demo：一个博客文章卡片页（blog card） --- https://codepen.io/miaamen/pen/rNVmKqM
