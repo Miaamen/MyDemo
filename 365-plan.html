@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>365存钱计划</title>
+		<link href="https://fonts.font.im/css?family=Handlee" rel="stylesheet">
+		<script src="vue.js"></script>
+		<style>
+			.board{
+				margin: 100px auto;
+				width: 760px;
+				/*max-width: 600px;*/
+				background: #99ce98;
+				font-family: 'Handlee', cursive;
+			}
+			
+			.title{
+				height: 95px;
+				line-height: 95px;
+				text-align: center;
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 2em;
+				font-weight: 900;
+			}
+			
+			h1{
+				padding: 0;
+				margin: 0;
+			}
+			
+			#container{
+				width: 100%;
+				box-sizing: border-box;
+				padding: 10px 10px 30px 10px;
+				background: #cbe1c9;
+				display: grid;
+				grid-template-columns: repeat(16,42px);
+				justify-content: space-around;
+			}
+			
+			.day{
+				display: inline-block;
+				box-sizing: content-box;
+				margin: 2px;
+				background: #7bab85;
+				line-height: 25px;
+				font-size: 1.1em;
+				color: #fff;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.active{
+				background: #ec9244;
+				text-decoration: line-through;
+				color: #857d7d;
+			}	
+			
+		
+		</style>
+	</head>
+	<body>
+		<div class="board">
+			<h1 class="title">My 365 savings plan</h1>
+			<div id="container">
+			</div>
+		</div>
+	
+		<script>
+			var container = document.getElementById('container');
+			for(let i = 1; i < 366; i ++){
+				var div = document.createElement("div");
+				div.className = "day";
+				div.innerHTML = i / 10;
+				container.appendChild(div)
+			}
+			
+			var day = document.getElementsByClassName("day");
+			for(let i = 0;i < day.length; i ++){
+				day[i].addEventListener('click',function(){
+					if(day[i].className == 'day'){
+						day[i].classList.add("active");
+					}else{
+						day[i].classList.remove('active');
+					}
+					
+				})
+			}
+		</script>
+	</body>
+</html>
