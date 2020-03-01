@@ -40,3 +40,5 @@
 19.20/02/21demo：高斯模糊（毛玻璃）背景效果，filter: blur()和background-attachment: fixed是关键 --- https://codepen.io/miaamen/pen/MWwjMgB
 
 20.20/02/28demo：一个博客文章卡片页（blog card） --- https://codepen.io/miaamen/pen/rNVmKqM
+
+21.20/03/01demo：学习Grid布局写的一个365存钱计划表 --- https://codepen.io/miaamen/pen/gOpRReV
