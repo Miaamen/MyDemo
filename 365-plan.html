@@ -68,24 +68,55 @@
 		</div>
 	
 		<script>
-			var container = document.getElementById('container');
-			for(let i = 1; i < 366; i ++){
-				var div = document.createElement("div");
-				div.className = "day";
-				div.innerHTML = i / 10;
-				container.appendChild(div)
+			var jsonList;
+			
+			if(JSON.parse(localStorage.getItem('jsonList')) == null){
+				jsonList = init();
+			}else{
+				jsonList = JSON.parse(localStorage.getItem('jsonList'));
 			}
 			
+			var container = document.getElementById('container');
 			var day = document.getElementsByClassName("day");
-			for(let i = 0;i < day.length; i ++){
-				day[i].addEventListener('click',function(){
-					if(day[i].className == 'day'){
-						day[i].classList.add("active");
-					}else{
-						day[i].classList.remove('active');
-					}
+			
+			function init(){
+				var list = [];
+				for(let i = 0; i < 366; i ++){
+					list[i] = 0;
+				}
+				return list;
+			}
+			
+			window.onload = function(){
+				var tempList = jsonList;
+				
+				console.log(tempList)
+				for(let i = 0; i < 366; i ++){
+					var div = document.createElement("div");
+					div.className = "day";
+					div.innerHTML = i / 10;
+					container.appendChild(div);
 					
-				})
+					if(tempList[i] === 1){
+						day[i].classList.add("active");
+					}
+				}
+				
+				for(let i = 0;i < day.length; i ++){
+					day[i].addEventListener('click',function(){
+						if(day[i].className == 'day'){
+							jsonList[i] = 1;
+							day[i].classList.add("active");
+							localStorage.setItem('jsonList',JSON.stringify(jsonList));
+							console.log(jsonList)
+						}else{
+							jsonList[i] = 0;
+							day[i].classList.remove('active');
+							localStorage.setItem('jsonList',JSON.stringify(jsonList));
+							console.log(jsonList)
+						}
+					})
+				}
 			}
 		</script>
 	</body>
