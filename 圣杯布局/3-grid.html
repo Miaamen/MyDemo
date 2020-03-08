@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		body{
+			display: grid;
+		}
+		
+		#header,#footer{
+			background: linear-gradient(to right,#ff486d,#ece222);
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			color: #DFD8D8;
+		}
+		
+		#header{
+			grid-row: 1;
+		}
+		
+		#footer{
+			grid-row: 3;
+		}
+		
+		#container{
+			height: 300px;
+			line-height: 300px;
+			text-align: center;
+			color: #DFD8D8;
+			grid-row: 2;
+			display: grid;
+			grid-template-columns: 150px auto 150px;
+		}
+		
+		#left{
+			background: rgb(176, 155, 226);
+		}
+		
+		#center{
+			background: rgb(175, 209, 167);
+		}
+		
+		#right{
+			background: rgb(136, 171, 234);
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div id="header">HEADER</div>
+		<div id="container">
+			<div id="left" class="column">LEFT</div>
+			<div id="center" class="column">CENTER</div>
+			<div id="right" class="column">RIGHT</div>
+		</div>
+		<div id="footer">FOOTER</div>
+	</body>
+</html>
