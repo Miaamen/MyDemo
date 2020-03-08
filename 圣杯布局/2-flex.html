@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		#header,#footer{
+			background: linear-gradient(to right,#ff486d,#ece222);
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			color: #dfd8d8;
+		}
+			
+		#container{
+			display: flex;
+			height: 300px;
+			line-height: 300px;
+			text-align: center;
+			color: #dfd8d8;
+		}
+			
+		#left{
+			width: 200px;
+			background: rgb(176, 155, 226);
+		}
+		
+		#center{
+			flex: 1;
+			/*/flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选
+			   flex:1即flex:1 1 0
+			   该项目会根据设置的比率占用伸缩容器的剩余空间*/
+			background: rgb(175, 209, 167);
+		}
+			
+		#right{
+			width: 200px;
+			background: rgb(136, 171, 234);
+		}
+		</style>
+	</head>
+	<body>
+		<div id="header">HEADER</div>
+		<div id="container">
+			<div id="left" class="column">LEFT</div>
+			<div id="center" class="column">CENTER</div>
+			<div id="right" class="column">RIGHT</div>
+		</div>
+		<div id="footer">FOOTER</div>
+	</body>
+</html>
