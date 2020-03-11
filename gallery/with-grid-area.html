@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="https://fonts.font.im/css?family=Indie+Flower" rel="stylesheet">
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			
+			#header{
+				padding-top: 30px;
+				width: 100%;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 3em;
+				background: linear-gradient(to right, #fdf479,#a5fd79,#79fdda,#79a1fd,#ba9ed2,#e28dc7);
+				-webkit-background-clip: text;
+				color: transparent;
+				font-family: 'Indie Flower', cursive;
+				font-weight: 900;
+			}
+			
+			.container{
+				width: 900px;
+				margin: 50px auto;
+			}
+			
+			.grid{
+				display: grid;
+				grid-template-columns: repeat(3, 300px);
+				grid-template-rows: repeat(20, 100px);
+				justify-content: center;
+				align-content: center;
+			}
+			
+			.pic-1{
+				grid-area: 1 / 1 / 4 / 2;
+			}
+			
+			.pic-2{
+				grid-area: 1 / 2 / 4 / 3;
+			}
+			
+			.pic-3{
+				grid-area: 1 / 3 / 5 / 4;
+			}
+			
+			.pic-4{
+				grid-area: 4 / 1 / 8 / 3;
+			}
+			
+			.pic-5{
+				grid-area: 5 / 3 / 8 / 4;
+			}
+			
+			.pic-6{
+				grid-area: 8 / 1 / 11 / 2;
+			}
+			
+			.pic-7{
+				grid-area: 8 / 2 / 13 / 3;
+			}
+			
+			.pic-8{
+				grid-area: 8 / 3 / 12 / 4;
+			}
+			
+			.pic-9{
+				grid-area: 11 / 1 / 13 / 2;
+			}
+			
+			.pic-10{
+				grid-area: 12 / 3 / 13 / 4;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">CAT Gallery ฅ'ω'ฅ</div>
+		<div class="container">
+			<div class="grid">
+				<div class="pic pic-1">
+					<img width="290px" height="290px" src="image/20190313092913_grzdf.jpeg" />
+				</div>
+				<div class="pic pic-2">
+					<img width="290px" height="290px" src="image/20181130171035_oidhb.jpeg" />
+				</div>
+				<div class="pic pic-3">
+					<img width="290px" height="390px" src="image/20181130171040_adpin.jpeg" />
+				</div>
+				<div class="pic pic-4">
+					<img width="590px" height="390" src="image/2018012202848_wtvts.jpeg" />
+				</div>
+				<div class="pic pic-5">
+					<img width="290px" height="290px" src="image/20181130171709_byjgy.jpg" />
+				</div>
+				<div class="pic pic-6">
+					<img width="290px" height="290px" src="image/20190313092410_ehjmk.gif" />
+				</div>
+				<div class="pic pic-7">
+					<img width="290px" height="490px" src="image/20190411180852_UfYhh.jpeg" />
+				</div>
+				<div class="pic pic-8">
+					<img width="290px" height="390px" src="image/20190313092917_mejpn.jpeg" />
+				</div>
+				<div class="pic pic-9">
+					<img width="290px" height="190px" src="image/20190313092951_rhlws.jpeg" />
+				</div>
+				<div class="pic pic-10">
+					<img width="290px" height="90px" src="image/微信截图_20200311223818.png" />
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
