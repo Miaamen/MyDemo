@@ -42,3 +42,5 @@
 20.20/02/28demo：一个博客文章卡片页（blog card） --- https://codepen.io/miaamen/pen/rNVmKqM
 
 21.20/03/01demo：学习Grid布局写的一个365存钱计划表 --- https://codepen.io/miaamen/pen/gOpRReV
+
+22.20/03/15demo：gallery夹中是几种方式实现的gallery展示台，有grid布局实现的普通gallery、grid和flex布局分别实现的瀑布流gallery，都未实现自适应宽度。
