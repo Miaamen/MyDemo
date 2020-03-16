@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: #272626;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1{
+            color: #333;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 7em;
+            letter-spacing: -4px;
+            position: relative;
+        }
+
+        h1::after{
+            content: attr(data-light);
+            background: linear-gradient(to right,#ef6a6a,#1c1ca3);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。*/
+            /*一个半径为100px的圆在左边左右0%，上下50%*/
+            /*clip-path: ellipse(80px 80px at 0% 50%);
+            -webkit-clip-path: ellipse(80px 80px at 0% 50%);*/
+            animation: light 5s infinite;
+        }
+
+        @keyframes light {
+            0%,100%{
+                clip-path: ellipse(80px 80px at 0% 50%);
+                -webkit-clip-path: ellipse(80px 80px at 0% 50%);
+            }
+            50%{
+                clip-path: ellipse(80px 80px at 100% 50%);
+                -webkit-clip-path: ellipse(80px 80px at 100% 50%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!--data-light= "Hello World"，伪元素用attr()获取-->
+    <h1 data-light= "Hello World">Hello World</h1>
+</body>
+</html>
