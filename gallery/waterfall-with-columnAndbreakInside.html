@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+			padding-top: 30px;
+			width: 100%;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 3em;
+			background: linear-gradient(to right, #fdf479,#a5fd79,#79fdda,#79a1fd,#ba9ed2,#e28dc7);
+			-webkit-background-clip: text;
+            background-clip: text;
+			color: transparent;
+			font-family: 'Indie Flower', cursive;
+			font-weight: 900;
+		}
+			
+		.container{
+			width: 1200px;
+			margin: 30px auto;
+            /*column-count --- 列数*/
+            column-count: 4;
+            /*column-width --- 列宽*/
+            column-width: 300px;
+            /*column-gap --- 列间距*/
+            column-gap: 0;
+		}
+
+        .item {
+            /*break-inside CSS 属性描述了在多列布局页面下的内容盒子如何中断*/
+            /* break-inside:avoid为了控制文本块分解成单独的列，以免项目列表的内容跨列 */
+            /*不加它的话，布局会自己调整，不听话，*/
+            break-inside: avoid;
+        }
+        .pic,img{
+			width: 295px;
+		}
+
+    </style>
+</head>
+<body>
+    <div id="header">CAT Gallery ฅ'ω'ฅ</div>
+		<div class="container">
+			<!--.flex是整个瀑布流容器，主轴方向是水平，放几个列-->
+			<div class="waterfall">
+				<!--.item是列瀑布流布局，主轴方向是竖直，放模块-->
+				<div class="item">
+					<div class="pic">
+						<img src="image/20190313092951_rhlws.jpeg" />
+					</div>
+					<div class="pic">
+						<img src="image/20181130171035_oidhb.jpeg" />
+					</div>
+					<div class="pic">
+						<img src="image/20181130171040_adpin.jpeg" />
+					</div>
+				</div>
+				
+				<div class="item">
+					<div class="pic">
+						<img src="image/20190313092911_cdblr.jpeg"/>
+					</div>
+					<div class="pic">
+						<img src="image/微信截图_20200311223818.png" />
+					</div>
+					<div class="pic">
+						<img src="image/20190313092913_grzdf.jpeg" />
+					</div>
+				</div>
+				
+				<div class="item">
+					<div class="pic">
+						<img src="image/20190411180852_UfYhh.jpeg" />
+					</div>
+					<div class="pic">
+						<img src="image/20190313092917_mejpn.jpeg" />
+					</div>
+				</div>
+				
+				<div class="item">
+					<div class="pic">
+						<img src="image/20181130171709_byjgy.jpg" />
+					</div>
+					<div class="pic">
+						<img src="image/20190313092410_ehjmk.gif" />
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
