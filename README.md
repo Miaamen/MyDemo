@@ -43,4 +43,4 @@
 
 21.20/03/01demo：学习Grid布局写的一个365存钱计划表 --- https://codepen.io/miaamen/pen/gOpRReV
 
-22.20/03/15demo：gallery夹中是几种方式实现的gallery展示台，有grid布局实现的普通gallery、grid和flex布局分别实现的瀑布流gallery，都未实现自适应宽度。
+22.20/03/15demo：gallery夹中是几种方式实现的gallery展示台，有grid布局实现的普通gallery、grid和flex布局和CSS3属性 column属性+break-inside属性分别实现的瀑布流gallery，都未实现自适应宽度。
