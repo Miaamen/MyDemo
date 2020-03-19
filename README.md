@@ -44,3 +44,7 @@
 21.20/03/01demo：学习Grid布局写的一个365存钱计划表 --- https://codepen.io/miaamen/pen/gOpRReV
 
 22.20/03/15demo：gallery夹中是几种方式实现的gallery展示台，有grid布局实现的普通gallery、grid和flex布局和CSS3属性 column属性+break-inside属性分别实现的瀑布流gallery，都未实现自适应宽度。
+
+23.20/03/17demo：flashlight-text-with-cilpPath.html --- 使用clip-path CSS 属性模拟手电筒照射文字text的效果 --- https://codepen.io/miaamen/pen/zYGLxpX
+
+24.20/03/19demo: shadow-text-with-lineaGradient.html --- linear-gradient实现斑马线效果，放在文字影响下，产生好看的效果 --- https://codepen.io/miaamen/pen/XWbBJzG
