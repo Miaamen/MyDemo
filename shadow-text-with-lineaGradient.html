@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.font.im/css?family=Amatic+SC" rel="stylesheet">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #ffd5d5;
+        }
+        div{
+            position: relative;
+            font-family: 'Amatic SC', cursive;
+            font-weight: 900;
+            padding: 0 0.12em 0 0;
+            font-size: 8em;
+            color: #f28282;
+        }
+
+        div::after{
+            content: attr(data-name);
+            position: absolute;
+            top: 0.06em;
+            left: 0.12em;
+            color: #d28787;
+            z-index: -2;
+        }
+
+        div::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(-45deg, #ffd5d5 0%, #ffd5d5 25%, transparent 25%, transparent 50%, #ffd5d5 50%, #ffd5d5 75%, transparent 75%, transparent 100%);
+            /*background-size默认repeat*/
+            background-size: 8px 8px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div data-name="Hello Mia">Hello Mia</div>
+</body>
+</html>
