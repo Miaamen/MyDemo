@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用伪元素内嵌image和filter: blur()属性模仿彩色阴影</title>
+    <style>
+        body{
+            background-color: #202020;
+        }
+
+        .flur{
+            width: 400px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .flur::after{
+            content: '';
+            background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585066467187&di=ab494a4dd3c64db430fe849252f1cce2&imgtype=0&src=http%3A%2F%2Fhbimg.huabanimg.com%2Fa6eb60dfc0f1ed8677321d0431dc512075f3e099fec1c-EBFRPN_fw658);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;src: ;
+            z-index: -1;
+            filter: blur(13px) saturate(2);
+            background-size: 100% 100%;
+        }
+
+        img{
+            width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flur">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585066467187&di=ab494a4dd3c64db430fe849252f1cce2&imgtype=0&src=http%3A%2F%2Fhbimg.huabanimg.com%2Fa6eb60dfc0f1ed8677321d0431dc512075f3e099fec1c-EBFRPN_fw658">
+    </div>
+</body>
+</html>
