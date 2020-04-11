@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试点击颜色copy颜色</title>
+    <style>
+        body{
+            background: #e8e8f3;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            background: #e8e8f3;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+                        -7px -7px 20px rgba(255, 255, 255, 1),
+                        inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+                        inset 7px 7px 15px rgba(55, 84, 170, 0),
+                        inset -7px -7px 20px rgba(255, 255, 255, 0),
+                        0px 0px 4px rgba(255, 255, 255, 0) !important;
+        }
+
+        #color{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            border-radius: 8px;
+            background-color: #95c6f1;
+            box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+                        -7px -7px 20px rgba(255, 255, 255, 1),
+                        inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+                        inset 7px 7px 15px rgba(55, 84, 170, 0),
+                        inset -7px -7px 20px rgba(255, 255, 255, 0),
+                        0px 0px 4px rgba(255, 255, 255, 0) !important;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="color"></div>
+    </div>
+
+    <script>
+        var color = document.getElementById("color");
+        color.addEventListener("click",function(){
+            var pickColor = window.getComputedStyle(this, null).getPropertyValue("background-color");
+            alert(pickColor);
+            copyToClipboard(pickColor);
+        })
+
+        function copyToClipboard(text) {
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        }
+    </script>
+</body>
+</html>
