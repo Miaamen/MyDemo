@@ -48,3 +48,5 @@
 23.20/03/17demo：flashlight-text-with-cilpPath.html --- 使用clip-path CSS 属性模拟手电筒照射文字text的效果 --- https://codepen.io/miaamen/pen/zYGLxpX
 
 24.20/03/19demo: shadow-text-with-lineaGradient.html --- linear-gradient实现斑马线效果，放在文字影响下，产生好看的效果 --- https://codepen.io/miaamen/pen/XWbBJzG
+
+25.20/04/11demo：点击颜色模块，可以复制颜色rgb()形式 --- https://codepen.io/miaamen/pen/zYvxPNO
