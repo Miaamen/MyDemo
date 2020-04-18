@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图小游戏</title>
+    <style>
+        /*匹配文档树的根元素。对于 HTML 来说，:root 表示 <html> 元素，除了优先级更高之外，与 html 选择器相同*/
+        /*表示声明的是全局变量*/
+        :root {
+            --color:lightgray;
+            --border-radius:10px;
+            --image:url('https://media.gettyimages.com/vectors/cute-cartoon-dachshunds-in-love-vector-id865392634?s=2048x2048');
+        }
+
+        body{
+            background: #eff2fcc9;
+        }
+
+        #puzzle-box,#puzzle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-120%,-50%);
+            width: 300px;
+            height: 300px;
+            border: 3px dashed #b0b0cb;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        #puzzle{
+            transform: translate(20%,-50%);
+            width: 324px;
+            height: 324px;
+            border: none;
+        }
+
+        #puzzle-box i{
+            box-sizing: border-box;
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 1px dashed #bcbcea;
+        }
+
+        #puzzle i{
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 4px;
+            background-image:var(--image);
+        }
+
+        .one{
+            border-top-left-radius: var(--border-radius);
+            background-position: left top;
+        }
+
+        .two{
+            background-position: center top;
+        }
+
+        .three{
+            border-top-right-radius: var(--border-radius);
+            background-position: right top;
+        }
+
+        .four{
+            background-position: left center;
+        }
+
+        .five{
+            background-position: center center;
+        }
+
+        .six{
+            background-position: right center;
+        }
+
+        .seven{
+            border-bottom-left-radius: var(--border-radius);
+            background-position: left bottom;
+        }
+
+        .eight{
+            background-position: center bottom;
+        }
+
+        .nine{
+            border-bottom-right-radius: var(--border-radius);
+            background-position: right bottom;
+        }
+
+        .dropped {
+            background:var(--color);
+            background-image:var(--image);
+            background-size:300px 300px;
+        }
+        .done {
+            opacity:0;
+            pointer-events:none;
+        }
+
+        .allDone {
+            animation:allDone 1s linear forwards;
+            border:3px solid lightgray !important;
+        }
+        .allDone i {
+            outline:0 !important;
+        }
+
+        @keyframes allDone {
+            50% { transform:translate(-110%,-50%) scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <!--ondrop事件在可拖动元素或选取的文本放置在目标区域时触发-->
+    <!--ondragover 事件在可拖动元素或选取的文本正在拖动到放置目标时触发-->
+    <div id="puzzle-box">
+        <i class="one" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="two" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="three" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="four" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="five" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="six" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="seven" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="eight" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+        <i class="nine" ondrop="drop(event)" ondragover="allowDrop(event)"></i>
+    </div>
+    <!--draggable 属性规定元素是否可拖动-->
+    <!--ondragstart 事件在用户开始拖动元素或选择的文本时触发-->
+    <div id="puzzle">
+        <i class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="two" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="three" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="four" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="five" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="six" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="seven" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="eight" class="one" draggable="true" ondragstart="drag(event)"></i>
+        <i class="nine" class="one" draggable="true" ondragstart="drag(event)"></i>
+    </div>
+   
+      <script>
+            var img = ['https://media.gettyimages.com/photos/cat-headphones-wearing-sunglasses-relaxing-in-the-grass-picture-id512291806?s=2048x2048','https://media.gettyimages.com/vectors/cute-cartoon-dachshunds-in-love-vector-id865392634?s=2048x2048','https://media.gettyimages.com/vectors/heart-shaped-sea-otters-in-love-vector-graphics-vector-id1183276814?s=2048x2048','https://media.gettyimages.com/vectors/funny-no-prob-llama-vector-illustration-vector-id1089951888?s=2048x2048','https://media.gettyimages.com/vectors/cute-sloth-sitting-in-lotus-yoga-pose-cartoon-sloth-bear-vector-vector-id1076571820?s=2048x2048','https://media.gettyimages.com/vectors/hand-drawing-hipster-fantasy-animal-unicorn-illustration-vector-id1065322868?s=2048x2048']
+            var imgSucceed = 0; // 5张图片
+        
+            function randomPic(){
+                let root = document.documentElement;
+                root.style.setProperty("--image","url("+ img[imgSucceed] +")");
+                imgSucceed ++;
+                if(imgSucceed > 5){
+                    imgSucceed = 0;
+                }
+                var puzzle = document.querySelector("#puzzle");
+                for(var i = puzzle.children.length; i >= 0; i --){
+                    puzzle.appendChild(puzzle.children[Math.random() * i | 0]);
+                }
+            }
+           
+            randomPic();
+
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.className);   
+            }
+
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text")
+            
+                if(ev.target.className == data){
+                    ev.target.classList.add('dropped')
+                    document.querySelector('.'+data+"[draggable='true']").classList.add('done')
+                    
+                    if(document.querySelectorAll('.dropped').length == 9) {
+                    document.querySelector('#puz').classList.add('allDone')
+                    document.querySelector('#puz').style.border = 'none'  
+                    document.querySelector('#puz').style.animation = 'allDone 1s linear forwards'  
+                    
+                    setTimeout(function(){
+                        reload()
+                        randomize()
+                    },1500)
+                    }    
+                }  
+            }
+
+            function reload() {
+            document.body.innerHTML = "<div id='puz'>  <i class='first' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='secon' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='third' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='fourt' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='fifth' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='sixth' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='seven' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='eight' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='ninth' ondrop='drop(event)' ondragover='allowDrop(event)'></i></div><div id='puzz'>  <i class='third' draggable='true' ondragstart='drag(event)'></i>  <i class='first' draggable='true' ondragstart='drag(event)'></i>  <i class='secon' draggable='true' ondragstart='drag(event)'></i>  <i class='fourt' draggable='true' ondragstart='drag(event)'></i>  <i class='fifth' draggable='true' ondragstart='drag(event)'></i>  <i class='sixth' draggable='true' ondragstart='drag(event)'></i>  <i class='seven' draggable='true' ondragstart='drag(event)'></i>  <i class='eight' draggable='true' ondragstart='drag(event)'></i>  <i class='ninth' draggable='true' ondragstart='drag(event)'></i>  </div>";
+            }
+            
+      </script>
+</body>
+</html>
