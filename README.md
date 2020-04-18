@@ -50,3 +50,5 @@
 24.20/03/19demo: shadow-text-with-lineaGradient.html --- linear-gradient实现斑马线效果，放在文字影响下，产生好看的效果 --- https://codepen.io/miaamen/pen/XWbBJzG
 
 25.20/04/11demo：点击颜色模块，可以复制颜色rgb()形式 --- https://codepen.io/miaamen/pen/zYvxPNO
+
+26.20/04/18demo：简单的拼图小游戏 --- puzzle.html
