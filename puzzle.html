@@ -10,7 +10,7 @@
         :root {
             --color:lightgray;
             --border-radius:10px;
-            --image:url('https://media.gettyimages.com/vectors/cute-cartoon-dachshunds-in-love-vector-id865392634?s=2048x2048');
+            --image:url('pickColor\img\1.jpg');
         }
 
         body{
@@ -41,6 +41,7 @@
             float: left;
             width: 100px;
             height: 100px;
+            background-size:300px 300px;
             border: 1px dashed #bcbcea;
         }
 
@@ -144,14 +145,14 @@
     </div>
    
       <script>
-            var img = ['https://media.gettyimages.com/photos/cat-headphones-wearing-sunglasses-relaxing-in-the-grass-picture-id512291806?s=2048x2048','https://media.gettyimages.com/vectors/cute-cartoon-dachshunds-in-love-vector-id865392634?s=2048x2048','https://media.gettyimages.com/vectors/heart-shaped-sea-otters-in-love-vector-graphics-vector-id1183276814?s=2048x2048','https://media.gettyimages.com/vectors/funny-no-prob-llama-vector-illustration-vector-id1089951888?s=2048x2048','https://media.gettyimages.com/vectors/cute-sloth-sitting-in-lotus-yoga-pose-cartoon-sloth-bear-vector-vector-id1076571820?s=2048x2048','https://media.gettyimages.com/vectors/hand-drawing-hipster-fantasy-animal-unicorn-illustration-vector-id1065322868?s=2048x2048']
+            var img = ['../pickColor/img/1.jpg','../pickColor/img/2.jpg','../pickColor/img/3.jpg','../pickColor/img/4.jpg','../pickColor/img/5.jpg']
             var imgSucceed = 0; // 5张图片
         
             function randomPic(){
                 let root = document.documentElement;
                 root.style.setProperty("--image","url("+ img[imgSucceed] +")");
                 imgSucceed ++;
-                if(imgSucceed > 5){
+                if(imgSucceed >= 5){
                     imgSucceed = 0;
                 }
                 var puzzle = document.querySelector("#puzzle");
@@ -179,20 +180,20 @@
                     document.querySelector('.'+data+"[draggable='true']").classList.add('done')
                     
                     if(document.querySelectorAll('.dropped').length == 9) {
-                    document.querySelector('#puz').classList.add('allDone')
-                    document.querySelector('#puz').style.border = 'none'  
-                    document.querySelector('#puz').style.animation = 'allDone 1s linear forwards'  
+                    document.querySelector('#puzzle-box').classList.add('allDone')
+                    document.querySelector('#puzzle-box').style.border = 'none'  
+                    document.querySelector('#puzzle-box').style.animation = 'allDone 1s linear forwards'  
                     
                     setTimeout(function(){
                         reload()
-                        randomize()
+                        randomPic()
                     },1500)
                     }    
                 }  
             }
 
             function reload() {
-            document.body.innerHTML = "<div id='puz'>  <i class='first' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='secon' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='third' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='fourt' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='fifth' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='sixth' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='seven' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='eight' ondrop='drop(event)' ondragover='allowDrop(event)'></i>  <i class='ninth' ondrop='drop(event)' ondragover='allowDrop(event)'></i></div><div id='puzz'>  <i class='third' draggable='true' ondragstart='drag(event)'></i>  <i class='first' draggable='true' ondragstart='drag(event)'></i>  <i class='secon' draggable='true' ondragstart='drag(event)'></i>  <i class='fourt' draggable='true' ondragstart='drag(event)'></i>  <i class='fifth' draggable='true' ondragstart='drag(event)'></i>  <i class='sixth' draggable='true' ondragstart='drag(event)'></i>  <i class='seven' draggable='true' ondragstart='drag(event)'></i>  <i class='eight' draggable='true' ondragstart='drag(event)'></i>  <i class='ninth' draggable='true' ondragstart='drag(event)'></i>  </div>";
+                document.body.innerHTML = ' <div id="puzzle-box"> <i class="one" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="two" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="three" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="four" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="five" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="six" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="seven" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="eight" ondrop="drop(event)" ondragover="allowDrop(event)"></i> <i class="nine" ondrop="drop(event)" ondragover="allowDrop(event)"></i> </div>  <div id="puzzle"> <i class="one" draggable="true" ondragstart="drag(event)"></i> <i class="two" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="three" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="four" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="five" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="six" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="seven" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="eight" class="one" draggable="true" ondragstart="drag(event)"></i> <i class="nine" class="one" draggable="true" ondragstart="drag(event)"></i>  </div>';
             }
             
       </script>
