@@ -52,3 +52,5 @@
 25.20/04/11demo：点击颜色模块，可以复制颜色rgb()形式 --- https://codepen.io/miaamen/pen/zYvxPNO
 
 26.20/04/18demo：简单的拼图小游戏 --- puzzle.html
+
+27.20/04/22demo：用Vue实现的滑动条 --- https://codepen.io/miaamen/pen/ExVZxaV
