@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue滑动条</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #container{
+            width: 800px;
+            height: 100px;
+            margin: 300px auto;
+            text-align: center;
+        }
+
+        .drag-number{
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .start{
+            margin-right: 20px;
+        }
+
+        .end{
+            margin-left: 20px;
+        }
+
+        .drag-box{
+            position: relative;
+            width: 200px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #86acce;
+            cursor: pointer;
+        }
+
+        .progress{
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .drag-span{
+            position: absolute;
+            top: -4px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: #b5c8d8;
+        }
+
+        .progressed{
+            background-color: #4d769b;
+            float: left;
+            width: 0;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="drag-number start">
+            <span>{{ startNum }}</span>
+        </div>
+
+        <!--mousemove指鼠标在元素上移动时, mousemove 事件被触发-->
+        <!--mouseleave鼠标的指针移出某个元素时，会触发mouseleave事件-->
+        <div class="drag-number drag-box" @mousemove="numMove($event)" @mouseleave="numEnd($event)">
+            <div class="progress" @click="numClick($event)">
+                <div class="progressed" :style="{width:distance + 'px'}"></div>
+            </div>
+            <div class="drag-span" @mousedown="numDown($event)" @mouseup="numEnd($event)" :style="{left:distance+'px'}"></div>
+        </div>
+
+        <div class="drag-number end">
+            <span>{{ endNum }}</span>
+        </div>
+
+        <div class="now-number">
+            当前值：{{ nowNum }}
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el : "#container",
+            data:{
+                mousePosistion: {},
+                locked: false,
+                startX : null,
+                startNum: 0,
+                endNum: 300,
+                nowNum: 0,
+                distance: 0,
+                endDistance: 0,
+                //transTime: .3, //点击拖动动画
+                dragWidth: 200, //进度条宽度
+            },
+            methods: {
+                mousePos: function(e) {
+                    var mousePosistion = {};
+                    mousePosistion.x = e.pageX;
+                    this.mousePosistion = mousePosistion;
+                    return mousePosistion;
+                },
+                numDown:function(e){  // 当鼠标指针移动到元素上方，并按下鼠标左键时
+                    //this.transTime = 0;
+                    this.locked = true;
+                    this.mousePos(e);
+                    this.startX = this.mousePosistion.x;
+                    this.endDistance = this.distance; //not
+                },
+                numMove: function(e){
+                    if (!this.locked) return;
+                    //console.log(this.mousePos(e).x + "ss")
+                    var dragSpanPosition = this.mousePos(e);
+                    var moveX = dragSpanPosition.x - this.startX;
+                    //console.log(moveX + "ss")
+                    if (this.distance >= this.dragWidth) {
+                        this.distance = this.dragWidth - 10;
+                    } else {
+                        if ((this.distance <= 0 && moveX < 0) || (this.distance >= this.dragWidth && moveX > 0)) return;
+                        this.distance = this.endDistance + moveX;
+
+                        this.countNum(this.distance);
+
+                    }
+                },
+                numClick: function(e){
+                    var x = e.offsetX,
+            moveX = x - this.distance;
+          this.distance += moveX;
+          this.countNum(this.distance);
+                },
+                numEnd: function(e){
+                    //this.transTime = 0.3;
+                    this.locked = false;
+                },
+                countNum: function(num){
+                    var len = this.endNum - this.startNum;
+                    //console.log("length:" + len)
+                    var scale = this.dragWidth / len;
+                    //console.log("drag:" + this.dragWidth)
+                    //console.log("scale:" + scale)
+                    this.nowNum = this.startNum + Math.ceil(num / scale);
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
