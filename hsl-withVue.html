@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSL滑杆取色</title>
+    <script src="vue.js"></script>
+    <style>
+        
+        #container{
+            width: 800px;
+            height: 100px;
+            margin: 300px auto;
+            text-align: center;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .drag-number{
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .start{
+            margin-right: 20px;
+        }
+
+        .end{
+            margin-left: 20px;
+        }
+
+        .drag-box{
+            position: relative;
+            width: 200px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #86acce;
+            cursor: pointer;
+        }
+
+        .progress{
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .drag-span{
+            position: absolute;
+            top: -4px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: #b5c8d8;
+        }
+
+        .progressed{
+            background-color: #4d769b;
+            float: left;
+            width: 0;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .now-number{
+            padding-top: 100px;
+        }
+
+        .myRange{
+            -webkit-appearance: none;
+            width: 200px;
+            height: 4px;
+            border-radius: 2px; /*这个属性设置使填充进度条时的图形为圆角*/
+            background-color: #b5c8d8;
+            outline: none;
+        }
+
+        .myRange::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            border: 2px solid #265079;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #86acce;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" v-bind:style="{background:hsl}">
+        <input class="myRange h" v-on:input="getHVal()" v-on:change="getHVal()" class="size-slider" type="range" min="0" max="300" step="1" value="0"/>
+        <input class="myRange s" v-on:input="getSVal()" v-on:change="getSVal(this.value)" class="size-slider" type="range" min="0" max="100" step="1" value="0"/>
+        <input class="myRange l" v-on:input="getLVal()" v-on:change="getLVal(this.value)" class="size-slider" type="range" min="0" max="100" step="1" value="0"/>
+        <div class="now-number">
+            h：{{ h }}  s: {{ s }} l: {{ l }}
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el : "#container",
+            data:{
+                nowNum: 0,
+                h: 0,
+                s: 0,
+                l: 0,
+                hsl: null
+            },
+           
+            methods: {
+                getHVal: function(){
+                    var a = (document.getElementsByClassName("h")[0]).value;
+                    this.h = a
+                    let hsl = "hsl(" + this.h + "," + this.s + "%"  + "," + this.l + "%"  + ")";
+                    this.hsl = hsl;
+                },
+                getSVal: function(){
+                    var b = (document.getElementsByClassName("s")[0]).value;
+                    this.s = b
+                    let hsl = "hsl(" + this.h + "," + this.s + "%"  + "," + this.l + "%"  + ")";
+                    this.hsl = hsl;
+                    
+                },
+                getLVal: function(){
+                    var c = (document.getElementsByClassName("l")[0]).value;
+                    this.l = c
+                    let hsl = "hsl(" + this.h + "," + this.s + "%"  + "," + this.l + "%"  + ")";
+                    this.hsl = hsl;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
