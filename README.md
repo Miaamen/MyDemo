@@ -28,6 +28,6 @@
 |22|20/03/15|grid布局实现的普通gallery、grid和flex布局和CSS3属性 column属性+break-inside属性分别实现的瀑布流gallery|[地址](https://github.com/Miaamen/MyDemo/tree/master/gallery)|无|
 |23|20/03/17|flashlight-text-with-cilpPath.html -- 使用clip-path CSS 属性模拟手电筒照射文字text的效果|[地址](https://github.com/Miaamen/MyDemo/commit/19ccbb956b907d4dbd3924162237ba50cf6220ec)|[codePen](https://codepen.io/miaamen/pen/zYGLxpX)|
 |24|20/04/11|linear-gradient实现斑马线效果，放在文字影响下，产生好看的效果|[地址](https://github.com/Miaamen/MyDemo/blob/master/shadow-text-with-lineaGradient.html)|[无|
-|25|20/01/13|点击颜色模块，可以复制颜色rgb()形式|[地址](https://github.com/Miaamen/MyDemo/commit/e1aac4211cfa7da433f047b6d7fe2cbaf871e99b)|[codePen](https://codepen.io/miaamen/pen/zYvxPNO)|
-|26|20/01/13|简单的拼图小游戏|[地址](https://github.com/Miaamen/MyDemo/commit/d6eb4f148b6157c8f0c06a68ddc08c13cb4dd137)|无|
-|27|20/01/13|用Vue实现的滑动条|[地址](https://github.com/Miaamen/MyDemo/commit/e60a817135cb1e2b58757eb917fefa5890ed5caa)|[codePen](https://codepen.io/miaamen/pen/ExVZxaV)|
+|25|20/04/11|点击颜色模块，可以复制颜色rgb()形式|[地址](https://github.com/Miaamen/MyDemo/commit/e1aac4211cfa7da433f047b6d7fe2cbaf871e99b)|[codePen](https://codepen.io/miaamen/pen/zYvxPNO)|
+|26|20/04/18|简单的拼图小游戏|[地址](https://github.com/Miaamen/MyDemo/commit/d6eb4f148b6157c8f0c06a68ddc08c13cb4dd137)|无|
+|27|20/04/22|用Vue实现的滑动条|[地址](https://github.com/Miaamen/MyDemo/commit/e60a817135cb1e2b58757eb917fefa5890ed5caa)|[codePen](https://codepen.io/miaamen/pen/ExVZxaV)|
