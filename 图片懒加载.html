@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        h1{
+            text-align: center;
+        }
+        .scroll-con{
+            height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .scroll-con-img{
+            width: 80%;
+            opacity: 0;
+            transform: translateX(50%);
+            transition: all 1s;
+        }
+        .fade{
+            transform: translateX(0);
+            opacity: 1;
+            transition: all 1s;
+        }
+    </style>
+    <title>图片懒加载</title>
+</head>
+<body>
+    <h1>LAZY LOAD</h1>
+    <div class="scroll-con">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <img class="scroll-con-img" data-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1221949641,3744687912&fm=26&gp=0.jpg" alt="">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <img class="scroll-con-img" data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1440817936,961971640&fm=11&gp=0.jpg" alt="">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reprehenderit rem quia, ut deserunt tempora? Optio accusantium doloremque veritatis, nemo maiores velit quis! Modi illum doloremque voluptatum cumque animi amet laudantium vero, eaque, porro inventore quisquam! Magni inventore quo rem voluptatibus dicta possimus voluptatum ut error quam nam corporis, a nemo cumque dolore eveniet consequatur nobis maiores ipsam aspernatur! Ducimus, eveniet officia? Provident est at veniam sit, omnis aliquam deleniti voluptatem mollitia perspiciatis quo officiis maxime voluptate repudiandae quae asperiores corrupti! Nihil labore esse ipsa iure dolorem quo sed. Molestias accusamus libero, exercitationem aut rem ipsum officiis iure possimus. Eum?
+
+        </p>
+        <img class="scroll-con-img" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4053232831,2697879883&fm=11&gp=0.jpg" alt="">
+    </div>
+</body>
+<script>
+    const con = document.querySelector('.scroll-con')
+    const imgs = document.querySelectorAll('.scroll-con-img')
+    con.addEventListener('scroll',()=>{
+        imgs.forEach(img=>{
+            /* Element.getBoundingClientRect() 方法返回元素的大小及其相对于视口的位置。 */
+            const imgTop = img.getBoundingClientRect().top
+            if(imgTop <= document.documentElement.clientHeight) {  
+                 const src = img.getAttribute('data-src')
+                 img.setAttribute('src',src)
+                 img.classList.add('fade')
+            }
+        })
+    })
+</script>
+</html>
